@@ -1,7 +1,7 @@
 import { lazy } from 'react'
 
-const DashboardAnalytics = lazy(() => import('../../views/dashboard/analytics'))
-const DashboardEcommerce = lazy(() => import('../../views/dashboard/ecommerce'))
+const DashboardAnalytics = lazy(() => import('../../views/dashboard/AwsStats'))
+const DashboardEcommerce = lazy(() => import('../../views/dashboard/RdsStats'))
 const DashboardRevo = lazy(() => import('../../views/dashboard/Revo'))
 const DashboardCE = lazy(() => import('../../views/dashboard/CE'))
 const DashboardSPM = lazy(() => import('../../views/dashboard/SPM'))
@@ -9,11 +9,11 @@ const DashboardJavelin = lazy(() => import('../../views/dashboard/Javelin'))
 
 const DashboardRoutes = [
   {
-    path: '/dashboard/analytics',
+    path: '/dashboard/AwsStats',
     element: <DashboardAnalytics />
   },
   {
-    path: '/dashboard/ecommerce',
+    path: '/dashboard/RdsStats',
     element: <DashboardEcommerce />
   },
   {

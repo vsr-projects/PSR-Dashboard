@@ -10,41 +10,24 @@ export default [
     badgeText: '6',
     children: [
       {
-        id: 'analyticsDash',
-        title: 'Aws Stats',
+        id: 'awsDash',
+        title: 'AWS Stats',
         icon: <Circle size={12} />,
-        navLink: '/dashboard/analytics'
+        navLink: '/dashboard/AwsStats'
       },
       {
-        id: 'eCommerceDash',
+        id: 'rdsDash',
         title: 'RDS Stats',
         icon: <Circle size={12} />,
-        navLink: '/dashboard/ecommerce'
+        navLink: '/dashboard/RdsStats'
       },
       {
         id: 'revoDash',
         title: 'Revo',
         icon: <Circle size={12} />,
         navLink: '/dashboard/revo'
-      },
-      {
-        id: 'CEDash',
-        title: 'CE',
-        icon: <Circle size={12} />,
-        navLink: '/dashboard/CE'
-      },
-      {
-        id: 'CEDash',
-        title: 'SPM',
-        icon: <Circle size={12} />,
-        navLink: '/dashboard/CE'
-      },
-      {
-        id: 'CEDash',
-        title: 'Javelin',
-        icon: <Circle size={12} />,
-        navLink: '/dashboard/Javelin'
       }
+      
     ]
   }
 ]
