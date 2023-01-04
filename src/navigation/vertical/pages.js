@@ -29,60 +29,7 @@ export default [
         permissions: ['admin', 'editor'],
         navLink: '/pages/faq'
       },
-      {
-        id: 'knowledgeBase',
-        title: 'Knowledge Base',
-        icon: <Circle size={12} />,
-        permissions: ['admin', 'editor'],
-        navLink: '/pages/knowledge-base',
-        parentOf: ['/pages/knowledge-base/category/questions', '/pages/knowledge-base/category']
-      },
-      {
-        id: 'pricing',
-        title: 'Pricing',
-        icon: <Circle size={12} />,
-        permissions: ['admin', 'editor'],
-        navLink: '/pages/pricing'
-      },
-      {
-        id: 'license',
-        title: 'License',
-        icon: <Circle size={12} />,
-        permissions: ['admin', 'editor'],
-        navLink: '/pages/license'
-      },
-      {
-        id: 'api-key',
-        title: 'API Key',
-        icon: <Circle size={12} />,
-        permissions: ['admin', 'editor'],
-        navLink: '/pages/api-key'
-      },
-      {
-        id: 'blog',
-        title: 'Blog',
-        icon: <Circle size={12} />,
-        children: [
-          {
-            id: 'blogList',
-            title: 'List',
-            permissions: ['admin', 'editor'],
-            navLink: '/pages/blog/list'
-          },
-          {
-            id: 'blogDetail',
-            title: 'Detail',
-            permissions: ['admin', 'editor'],
-            navLink: '/pages/blog/detail'
-          },
-          {
-            id: 'blogEdit',
-            title: 'Edit',
-            permissions: ['admin', 'editor'],
-            navLink: '/pages/blog/edit'
-          }
-        ]
-      },
+      
       {
         id: 'mailTemplate',
         title: 'Mail Template',
