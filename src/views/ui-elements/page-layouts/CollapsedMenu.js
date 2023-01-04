@@ -6,7 +6,7 @@ import { Alert } from 'reactstrap'
 
 // ** Custom Components
 import Breadcrumbs from '@components/breadcrumbs'
-import Ecommerce from '../../dashboard/ecommerce'
+import AwsStats from '../../dashboard/AwsStats'
 
 const CollapsedMenu = () => {
   return (
