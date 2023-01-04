@@ -1,183 +1,83 @@
 // ** React Imports
 import { useContext } from 'react'
 
-// ** Icons Imports
-import { List } from 'react-feather'
-
-// ** Custom Components
-import Avatar from '@components/avatar'
-import Timeline from '@components/timeline'
-import AvatarGroup from '@components/avatar-group'
-
-// ** Utils
-import { kFormatter } from '@utils'
+// ** Reactstrap Imports
+import { Row, Col } from 'reactstrap'
 
 // ** Context
 import { ThemeColors } from '@src/utility/context/ThemeColors'
 
-// ** Reactstrap Imports
-import { Row, Col, Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
-
 // ** Demo Components
-import InvoiceList from '@src/views/apps/invoice/list'
-import Sales from '@src/views/ui-elements/cards/analytics/Sales'
-import AvgSessions from '@src/views/ui-elements/cards/analytics/AvgSessions'
-import CardAppDesign from '@src/views/ui-elements/cards/advance/CardAppDesign'
-import SupportTracker from '@src/views/ui-elements/cards/analytics/SupportTracker'
-import OrdersReceived from '@src/views/ui-elements/cards/statistics/OrdersReceived'
-import SubscribersGained from '@src/views/ui-elements/cards/statistics/SubscribersGained'
-import CardCongratulations from '@src/views/ui-elements/cards/advance/CardCongratulations'
-
-// ** Images
-import jsonImg from '@src/assets/images/icons/json.png'
-
-// ** Avatar Imports
-import avatar6 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
-import avatar7 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
-import avatar8 from '@src/assets/images/portrait/small/avatar-s-8.jpg'
-import avatar9 from '@src/assets/images/portrait/small/avatar-s-9.jpg'
-import avatar20 from '@src/assets/images/portrait/small/avatar-s-20.jpg'
+import CompanyTable from './CompanyTable'
+import Earnings from '@src/views/ui-elements/cards/analytics/Earnings'
+import CardMedal from '@src/views/ui-elements/cards/advance/CardMedal'
+import CardMeetup from '@src/views/ui-elements/cards/advance/CardMeetup'
+import StatsCard from '@src/views/ui-elements/cards/statistics/StatsCard'
+import GoalOverview from '@src/views/ui-elements/cards/analytics/GoalOverview'
+import RevenueReport from '@src/views/ui-elements/cards/analytics/RevenueReport'
+import OrdersBarChart from '@src/views/ui-elements/cards/statistics/OrdersBarChart'
+import CardTransactions from '@src/views/ui-elements/cards/advance/CardTransactions'
+import ProfitLineChart from '@src/views/ui-elements/cards/statistics/ProfitLineChart'
+import CardBrowserStates from '@src/views/ui-elements/cards/advance/CardBrowserState'
 
 // ** Styles
 import '@styles/react/libs/charts/apex-charts.scss'
+import '@styles/base/pages/dashboard-ecommerce.scss'
 
-const RevoDashboard = () => {
+const SpmDashboard = () => {
   // ** Context
   const { colors } = useContext(ThemeColors)
 
-  // ** Vars
-  const avatarGroupArr = [
-    {
-      imgWidth: 33,
-      imgHeight: 33,
-      title: 'Billy Hopkins',
-      placement: 'bottom',
-      img: avatar9
-    },
-    {
-      imgWidth: 33,
-      imgHeight: 33,
-      title: 'Amy Carson',
-      placement: 'bottom',
-      img: avatar6
-    },
-    {
-      imgWidth: 33,
-      imgHeight: 33,
-      title: 'Brandon Miles',
-      placement: 'bottom',
-      img: avatar8
-    },
-    {
-      imgWidth: 33,
-      imgHeight: 33,
-      title: 'Daisy Weber',
-      placement: 'bottom',
-      img: avatar7
-    },
-    {
-      imgWidth: 33,
-      imgHeight: 33,
-      title: 'Jenny Looper',
-      placement: 'bottom',
-      img: avatar20
-    }
-  ]
-  const data = [
-    {
-      title: '12 Invoices have been paid',
-      content: 'Invoices have been paid to the company.',
-      meta: '',
-      metaClassName: 'me-1',
-      customContent: (
-        <div className='d-flex align-items-center'>
-          <img className='me-1' src={jsonImg} alt='data.json' height='23' />
-          <span>data.json</span>
-        </div>
-      )
-    },
-    {
-      title: 'Client Meeting',
-      content: 'Project meeting with john @10:15am.',
-      meta: '',
-      metaClassName: 'me-1',
-      color: 'warning',
-      customContent: (
-        <div className='d-flex align-items-center'>
-          <Avatar img={avatar9} />
-          <div className='ms-50'>
-            <h6 className='mb-0'>John Doe (Client)</h6>
-            <span>CEO of Infibeam</span>
-          </div>
-        </div>
-      )
-    },
-    {
-      title: 'Create a new project for client',
-      content: 'Add files to new design folder',
-      color: 'info',
-      meta: '',
-      metaClassName: 'me-1',
-      customContent: <AvatarGroup data={avatarGroupArr} />
-    },
-    {
-      title: 'Create a new project for client',
-      content: 'Add files to new design folder',
-      color: 'danger',
-      meta: '',
-      metaClassName: 'me-1'
-    }
-  ]
+  // ** vars
+  const trackBgColor = '#e9ecef'
 
   return (
-    <div id='dashboard-analytics'>
+    <div id='dashboard-ecommerce'>
       <Row className='match-height'>
-        <Col lg='6' sm='12'>
-          <CardCongratulations />
+        <Col xl='4' md='6' xs='12'>
+          <CardMedal />
         </Col>
-        <Col lg='3' sm='6'>
-          <SubscribersGained kFormatter={kFormatter} />
-        </Col>
-        <Col lg='3' sm='6'>
-          <OrdersReceived kFormatter={kFormatter} warning={colors.warning.main} />
+        <Col xl='8' md='6' xs='12'>
+          <StatsCard cols={{ xl: '3', sm: '6' }} />
         </Col>
       </Row>
       <Row className='match-height'>
-        <Col lg='6' xs='12'>
-          <AvgSessions primary={colors.primary.main} />
+        <Col lg='4' md='12'>
+          <Row className='match-height'>
+            <Col lg='6' md='3' xs='6'>
+              <OrdersBarChart warning={colors.warning.main} />
+            </Col>
+            <Col lg='6' md='3' xs='6'>
+              <ProfitLineChart info={colors.info.main} />
+            </Col>
+            <Col lg='12' md='6' xs='12'>
+              <Earnings success={colors.success.main} />
+            </Col>
+          </Row>
         </Col>
-        <Col lg='6' xs='12'>
-          <SupportTracker primary={colors.primary.main} danger={colors.danger.main} />
+        <Col lg='8' md='12'>
+          <RevenueReport primary={colors.primary.main} warning={colors.warning.main} />
         </Col>
       </Row>
       <Row className='match-height'>
-        <Col lg='4' xs='12'>
-          <Card className='card-user-timeline'>
-            <CardHeader>
-              <div className='d-flex align-items-center'>
-                <List className='user-timeline-title-icon' />
-                <CardTitle tag='h4'>User Timeline</CardTitle>
-              </div>
-            </CardHeader>
-            <CardBody>
-              <Timeline className='ms-50 mb-0' data={data} />
-            </CardBody>
-          </Card>
+        <Col lg='8' xs='12'>
+          <CompanyTable />
         </Col>
         <Col lg='4' md='6' xs='12'>
-          <Sales primary={colors.primary.main} info={colors.info.main} />
+          <CardMeetup />
         </Col>
         <Col lg='4' md='6' xs='12'>
-          <CardAppDesign />
+          <CardBrowserStates colors={colors} trackBgColor={trackBgColor} />
         </Col>
-      </Row>
-      <Row className='match-height'>
-        <Col xs='12'>
-          <InvoiceList />
+        <Col lg='4' md='6' xs='12'>
+          <GoalOverview success={colors.success.main} />
+        </Col>
+        <Col lg='4' md='6' xs='12'>
+          <CardTransactions />
         </Col>
       </Row>
     </div>
   )
 }
 
-export default SPMDashboard
+export default SpmDashboard

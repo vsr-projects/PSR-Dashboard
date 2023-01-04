@@ -1,20 +1,21 @@
 import { lazy } from 'react'
 
-const DashboardAnalytics = lazy(() => import('../../views/dashboard/AwsStats'))
-const DashboardEcommerce = lazy(() => import('../../views/dashboard/RdsStats'))
-const DashboardRevo = lazy(() => import('../../views/dashboard/Revo'))
-const DashboardCE = lazy(() => import('../../views/dashboard/CE'))
-const DashboardSPM = lazy(() => import('../../views/dashboard/SPM'))
-const DashboardJavelin = lazy(() => import('../../views/dashboard/Javelin'))
+const DashboardAws = lazy(() => import('../../views/dashboard/AwsStats'))
+const DashboardRds = lazy(() => import('../../views/dashboard/RdsStats'))
+const DashboardRevo = lazy(() => import('../../views/dashboard/revo'))
+const DashboardCe = lazy(() => import('../../views/dashboard/Ce'))
+const DashboardSpm = lazy(() => import('../../views/dashboard/Spm'))
+const DashboardJav = lazy(() => import('../../views/dashboard/Javelin'))
+
 
 const DashboardRoutes = [
   {
     path: '/dashboard/AwsStats',
-    element: <DashboardAnalytics />
+    element: <DashboardAws />
   },
   {
     path: '/dashboard/RdsStats',
-    element: <DashboardEcommerce />
+    element: <DashboardRds />
   },
   {
     path: '/dashboard/revo',
@@ -22,15 +23,15 @@ const DashboardRoutes = [
   },
   {
     path: '/dashboard/CE',
-    element: <DashboardCE />
+    element: <DashboardCe />
   },
   {
-    path: '/dashboard/SPM',
-    element: <DashboardSPM />
+    path: '/dashboard/Spm',
+    element: <DashboardSpm />
   },
   {
     path: '/dashboard/Javelin',
-    element: <DashboardJavelin />
+    element: <DashboardJav />
   }
 
 ]

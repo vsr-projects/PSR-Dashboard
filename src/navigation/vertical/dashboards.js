@@ -19,15 +19,32 @@ export default [
         id: 'rdsDash',
         title: 'RDS Stats',
         icon: <Circle size={12} />,
-        navLink: '/dashboard/RdsStats'
+        navLink: '/dashboard/RdsStats' 
       },
       {
         id: 'revoDash',
         title: 'Revo',
         icon: <Circle size={12} />,
         navLink: '/dashboard/revo'
+      },
+      {
+        id: 'CeDash',
+        title: 'CE',
+        icon: <Circle size={12} />,
+        navLink: '/dashboard/Ce' 
+      },
+      {
+        id: 'SpmDash',
+        title: 'Spm',
+        icon: <Circle size={12} />,
+        navLink: '/dashboard/Spm' 
+      },
+      {
+        id: 'JavelinDash',
+        title: 'Javelin',
+        icon: <Circle size={12} />,
+        navLink: '/dashboard/Javelin' 
       }
-      
     ]
   }
 ]
