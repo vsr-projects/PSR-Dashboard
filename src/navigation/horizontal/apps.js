@@ -8,7 +8,6 @@ import {
   Calendar,
   FileText,
   CheckSquare,
-  ShoppingCart,
   MessageSquare
 } from 'react-feather'
 
@@ -98,37 +97,7 @@ export default [
           }
         ]
       },
-      {
-        id: 'eCommerce',
-        title: 'eCommerce',
-        icon: <ShoppingCart />,
-        children: [
-          {
-            id: 'shop',
-            title: 'Shop',
-            icon: <Circle />,
-            navLink: '/apps/ecommerce/shop'
-          },
-          {
-            id: 'detail',
-            title: 'Details',
-            icon: <Circle />,
-            navLink: '/apps/ecommerce/product-detail'
-          },
-          {
-            id: 'wishList',
-            title: 'Wish List',
-            icon: <Circle />,
-            navLink: '/apps/ecommerce/wishlist'
-          },
-          {
-            id: 'checkout',
-            title: 'Checkout',
-            icon: <Circle />,
-            navLink: '/apps/ecommerce/checkout'
-          }
-        ]
-      },
+      
       {
         id: 'users',
         title: 'User',

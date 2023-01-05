@@ -11,7 +11,7 @@ import './apps/invoice'
 import './apps/calendar'
 import './apps/userList'
 import './pages/profile'
-import './apps/eCommerce'
+
 import './pages/blog-data'
 import './tables/datatables'
 import './pages/pricing-data'

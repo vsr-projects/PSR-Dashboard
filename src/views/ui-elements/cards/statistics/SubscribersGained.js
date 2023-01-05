@@ -22,7 +22,7 @@ const SubscribersGained = ({ kFormatter }) => {
       icon={<Users size={21} />}
       color='primary'
       stats={kFormatter(data.analyticsData.subscribers)}
-      statTitle='Subscribers Gained'
+      statTitle='Employee Count'
       series={data.series}
       type='area'
     />

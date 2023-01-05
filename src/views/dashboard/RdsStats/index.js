@@ -16,7 +16,6 @@ import StatsCard from '@src/views/ui-elements/cards/statistics/StatsCard'
 import GoalOverview from '@src/views/ui-elements/cards/analytics/GoalOverview'
 import RevenueReport from '@src/views/ui-elements/cards/analytics/RevenueReport'
 import OrdersBarChart from '@src/views/ui-elements/cards/statistics/OrdersBarChart'
-import CardTransactions from '@src/views/ui-elements/cards/advance/CardTransactions'
 import ProfitLineChart from '@src/views/ui-elements/cards/statistics/ProfitLineChart'
 import CardBrowserStates from '@src/views/ui-elements/cards/advance/CardBrowserState'
 

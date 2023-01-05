@@ -64,22 +64,7 @@ export const searchArr = [
         icon: 'Home',
         link: '/dashboard/Javelin'
       },
-      {
-        id: 3,
-        target: 'email',
-        isBookmarked: true,
-        title: 'Email',
-        icon: 'Mail',
-        link: '/apps/email'
-      },
-      {
-        id: 4,
-        target: 'chat',
-        isBookmarked: true,
-        title: 'Chat',
-        icon: 'MessageSquare',
-        link: '/apps/chat'
-      },
+      
       {
         id: 5,
         target: 'todo',
@@ -128,14 +113,7 @@ export const searchArr = [
         icon: 'Plus',
         link: '/apps/invoice/add'
       },
-      {
-        id: 11,
-        target: 'shop',
-        isBookmarked: false,
-        title: 'Shop Ecommerce',
-        icon: 'ShoppingCart',
-        link: '/apps/ecommerce/shop'
-      },
+      
       {
         id: 12,
         target: 'detail',
