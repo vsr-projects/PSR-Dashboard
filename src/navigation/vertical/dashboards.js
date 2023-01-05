@@ -17,9 +17,9 @@ export default [
       },
       {
         id: 'rdsDash',
-        title: 'RDS Stats',
+        title: 'Rds Stats',
         icon: <Circle size={12} />,
-        navLink: '/dashboard/RdsStats' 
+        navLink: '/dashboard/RdsStats'
       },
       {
         id: 'revoDash',

@@ -1,78 +1,113 @@
 // ** React Imports
 import { useContext } from 'react'
 
-// ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+// ** Icons Imports
+import { List } from 'react-feather'
+
+// ** Custom Components
+import Avatar from '@components/avatar'
+import Timeline from '@components/timeline'
+import AvatarGroup from '@components/avatar-group'
+
+// ** Utils
+import { kFormatter } from '@utils'
 
 // ** Context
 import { ThemeColors } from '@src/utility/context/ThemeColors'
 
+// ** Reactstrap Imports
+import { Row, Col, Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+
 // ** Demo Components
-import CompanyTable from './CompanyTable'
-import Earnings from '@src/views/ui-elements/cards/analytics/Earnings'
-import CardMedal from '@src/views/ui-elements/cards/advance/CardMedal'
-import CardMeetup from '@src/views/ui-elements/cards/advance/CardMeetup'
-import StatsCard from '@src/views/ui-elements/cards/statistics/StatsCard'
-import GoalOverview from '@src/views/ui-elements/cards/analytics/GoalOverview'
-import RevenueReport from '@src/views/ui-elements/cards/analytics/RevenueReport'
-import OrdersBarChart from '@src/views/ui-elements/cards/statistics/OrdersBarChart'
-import ProfitLineChart from '@src/views/ui-elements/cards/statistics/ProfitLineChart'
-import CardBrowserStates from '@src/views/ui-elements/cards/advance/CardBrowserState'
+import InvoiceList from '@src/views/apps/invoice/list'
+import Sales from '@src/views/ui-elements/cards/analytics/Sales'
+import AvgSessions from '@src/views/ui-elements/cards/analytics/AvgSessions'
+import CardAppDesign from '@src/views/ui-elements/cards/advance/CardAppDesign'
+import SupportTracker from '@src/views/ui-elements/cards/analytics/SupportTracker'
+import OrdersReceived from '@src/views/ui-elements/cards/statistics/OrdersReceived'
+import SubscribersGained from '@src/views/ui-elements/cards/statistics/SubscribersGained'
+import CardCongratulations from '@src/views/ui-elements/cards/advance/CardCongratulations'
+
+// ** Images
+
+// ** Avatar Imports
+import avatar6 from '@src/assets/images/portrait/small/avatar-s-6.jpg'
+import avatar7 from '@src/assets/images/portrait/small/avatar-s-7.jpg'
+import avatar8 from '@src/assets/images/portrait/small/avatar-s-8.jpg'
+import avatar9 from '@src/assets/images/portrait/small/avatar-s-9.jpg'
+import avatar20 from '@src/assets/images/portrait/small/avatar-s-20.jpg'
 
 // ** Styles
 import '@styles/react/libs/charts/apex-charts.scss'
-import '@styles/base/pages/dashboard-ecommerce.scss'
 
 const RdsDashboard = () => {
   // ** Context
   const { colors } = useContext(ThemeColors)
 
-  // ** vars
-  const trackBgColor = '#e9ecef'
-
+  // ** Vars
+  const avatarGroupArr = [
+    {
+      imgWidth: 33,
+      imgHeight: 33,
+      title: 'Billy Hopkins',
+      placement: 'bottom',
+      img: avatar9
+    },
+    {
+      imgWidth: 33,
+      imgHeight: 33,
+      title: 'Amy Carson',
+      placement: 'bottom',
+      img: avatar6
+    },
+    {
+      imgWidth: 33,
+      imgHeight: 33,
+      title: 'Brandon Miles',
+      placement: 'bottom',
+      img: avatar8
+    },
+    {
+      imgWidth: 33,
+      imgHeight: 33,
+      title: 'Daisy Weber',
+      placement: 'bottom',
+      img: avatar7
+    },
+    {
+      imgWidth: 33,
+      imgHeight: 33,
+      title: 'Jenny Looper',
+      placement: 'bottom',
+      img: avatar20
+    }
+  ]
+ 
   return (
-    <div id='dashboard-ecommerce'>
+    <div id='dashboard-analytics'>
       <Row className='match-height'>
-        <Col xl='4' md='6' xs='12'>
-          <CardMedal />
+        <Col lg='6' sm='12'>
+          <CardCongratulations />
         </Col>
-        <Col xl='8' md='6' xs='12'>
-          <StatsCard cols={{ xl: '3', sm: '6' }} />
+        <Col lg='3' sm='6'>
+          <SubscribersGained kFormatter={kFormatter} />
+        </Col>
+        <Col lg='3' sm='6'>
+          <OrdersReceived kFormatter={kFormatter} warning={colors.warning.main} />
         </Col>
       </Row>
       <Row className='match-height'>
-        <Col lg='4' md='12'>
-          <Row className='match-height'>
-            <Col lg='6' md='3' xs='6'>
-              <OrdersBarChart warning={colors.warning.main} />
-            </Col>
-            <Col lg='6' md='3' xs='6'>
-              <ProfitLineChart info={colors.info.main} />
-            </Col>
-            <Col lg='12' md='6' xs='12'>
-              <Earnings success={colors.success.main} />
-            </Col>
-          </Row>
+        <Col lg='6' xs='12'>
+          <AvgSessions primary={colors.primary.main} />
         </Col>
-        <Col lg='8' md='12'>
-          <RevenueReport primary={colors.primary.main} warning={colors.warning.main} />
+        <Col lg='6' xs='12'>
+          <SupportTracker primary={colors.primary.main} danger={colors.danger.main} />
         </Col>
       </Row>
+      
       <Row className='match-height'>
-        <Col lg='8' xs='12'>
-          <CompanyTable />
-        </Col>
-        <Col lg='4' md='6' xs='12'>
-          <CardMeetup />
-        </Col>
-        <Col lg='4' md='6' xs='12'>
-          <CardBrowserStates colors={colors} trackBgColor={trackBgColor} />
-        </Col>
-        <Col lg='4' md='6' xs='12'>
-          <GoalOverview success={colors.success.main} />
-        </Col>
-        <Col lg='4' md='6' xs='12'>
-          <CardTransactions />
+        <Col xs='12'>
+          <InvoiceList />
         </Col>
       </Row>
     </div>
