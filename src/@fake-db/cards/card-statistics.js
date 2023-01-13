@@ -61,7 +61,7 @@ const data = {
       }
     ],
     analyticsData: {
-      orders: 97500
+      orders: 38
     }
   },
   siteTraffic: {

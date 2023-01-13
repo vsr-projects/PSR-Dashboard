@@ -13,12 +13,7 @@ export default [
         icon: <Activity />,
         navLink: '/dashboard/analytics'
       },
-      {
-        id: 'eCommerceDash',
-        title: 'eCommerce',
-        icon: <ShoppingCart />,
-        navLink: '/dashboard/ecommerce'
-      }
+      
     ]
   }
 ]

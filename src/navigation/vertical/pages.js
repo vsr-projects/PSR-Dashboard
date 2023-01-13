@@ -4,7 +4,7 @@ import { FileText, Circle, Square, UserCheck } from 'react-feather'
 export default [
   {
     id: 'pages',
-    title: 'Misc',
+    title: '',
     icon: <FileText size={20} />,
     children: [
       {

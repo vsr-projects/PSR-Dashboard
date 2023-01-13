@@ -35,7 +35,7 @@ export default [
       },
       {
         id: 'SpmDash',
-        title: 'Spm',
+        title: 'FP',
         icon: <Circle size={12} />,
         navLink: '/dashboard/Spm' 
       },

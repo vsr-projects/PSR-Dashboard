@@ -25,14 +25,6 @@ export const searchArr = [
         link: '/dashboard/analytics'
       },
       {
-        id: 2,
-        target: 'eCommerceDash',
-        isBookmarked: false,
-        title: 'eCommerce Dashboard',
-        icon: 'Home',
-        link: '/'
-      },
-      {
         id: 129,
         target: 'revoDash',
         isBookmarked: false,

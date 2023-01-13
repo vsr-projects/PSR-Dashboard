@@ -111,7 +111,7 @@ const StatisticsCards = () => {
         {/* Stats Area Charts */}
         <Col lg='3' sm='6'>
           <SubscribersGained kFormatter={kFormatter} />
-        </Col>
+        </Col>  
         <Col lg='3' sm='6'>
           <RevenueGenerated kFormatter={kFormatter} success={context.colors.success.main} />
         </Col>

@@ -2,9 +2,6 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-// ** Store & Actions
-import { useSelector, useDispatch } from 'react-redux'
-import { handleMenuHidden, handleContentWidth } from '@store/layout'
 
 // ** Third Party Components
 import classnames from 'classnames'
@@ -52,12 +49,7 @@ const HorizontalLayout = props => {
   const [navbarScrolled, setNavbarScrolled] = useState(false)
 
   // ** Store Vars
-  const dispatch = useDispatch()
-  const layoutStore = useSelector(state => state.layout)
 
-  // ** Vars
-  const contentWidth = layoutStore.contentWidth
-  const isHidden = layoutStore.menuHidden
 
   // ** Handles Content Width
   const setContentWidth = val => dispatch(handleContentWidth(val))
