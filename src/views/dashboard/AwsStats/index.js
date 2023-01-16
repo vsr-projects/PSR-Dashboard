@@ -2,12 +2,8 @@
 import { useContext } from 'react'
 
 // ** Icons Imports
-import { List } from 'react-feather'
 
 // ** Custom Components
-import Avatar from '@components/avatar'
-import Timeline from '@components/timeline'
-import AvatarGroup from '@components/avatar-group'
 
 // ** Utils
 import { kFormatter } from '@utils'
@@ -16,20 +12,16 @@ import { kFormatter } from '@utils'
 import { ThemeColors } from '@src/utility/context/ThemeColors'
 
 // ** Reactstrap Imports
-import { Row, Col, Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { Row, Col } from 'reactstrap'
 
 // ** Demo Components
 import InvoiceList from '@src/views/apps/invoice/list'
-import Sales from '@src/views/ui-elements/cards/analytics/Sales'
 import AvgSessions from '@src/views/ui-elements/cards/analytics/AvgSessions'
-import CardAppDesign from '@src/views/ui-elements/cards/advance/CardAppDesign'
 import SupportTracker from '@src/views/ui-elements/cards/analytics/SupportTracker'
 import Aws_cost from '../../ui-elements/cards/statistics/Aws_cost'
 import Aws_top_services from '../../ui-elements/cards/statistics/Aws_top_services'
 import Aws_top from '../../ui-elements/cards/analytics/Aws_top'
-import OrdersReceived from '@src/views/ui-elements/cards/statistics/OrdersReceived'
 import SubscribersGained from '@src/views/ui-elements/cards/statistics/SubscribersGained'
-import Earnings from '@src/views/ui-elements/cards/analytics/Earnings'
 
 
 // ** Styles

@@ -8,6 +8,7 @@ import { Users } from 'react-feather'
 // ** Custom Components
 import StatsWithAreaChart from '@components/widgets/stats/StatsWithAreaChart'
 
+
 const Aws_top_services = ({ kFormatter }) => {
   // ** State
   const [data, setData] = useState(null)
@@ -18,6 +19,7 @@ const Aws_top_services = ({ kFormatter }) => {
   }, [])
 
   return data !== null ? (
+    
     <StatsWithAreaChart
       icon={<Users size={21} />}
       color='primary'
@@ -26,6 +28,7 @@ const Aws_top_services = ({ kFormatter }) => {
       series={data.series}
       type='area'
     />
+    
   ) : null
 }
 
