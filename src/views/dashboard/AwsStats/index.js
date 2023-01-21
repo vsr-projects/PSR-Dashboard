@@ -41,10 +41,17 @@ const AwsDashboard = () => {
           <Aws_cost kFormatter={kFormatter} />
         </Col>
         <Col lg='6' sm='6' xs='6'>
-          <Aws_top success={colors.success.main} />
+          <Row>
+            <Aws_top success={colors.success.main} />
+          </Row>  
+          <Row>
+            
+          </Row>
         </Col>
         <Col lg='6' sm='6'>
+          
           <Aws_top_services kFormatter={kFormatter} />
+          
         </Col>
         <Col lg='6' sm='6'>
           <SubscribersGained kFormatter={kFormatter} />

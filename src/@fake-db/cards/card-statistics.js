@@ -28,7 +28,7 @@ const data = {
       }
     ],
     analyticsData: {
-      subscribers: 38
+      subscribers: 41
     }
   },
   revenueGenerated: {
