@@ -2,12 +2,12 @@ import mock from '../mock'
 
 const data = {
   orders_bar_chart: {
-    title: 'Average Server Usage',
-    statistics: '49%',
+    title: 'Total Aws Services',
+    statistics: '80',
     series: [
       {
-        name: '2020',
-        data: [45, 85, 65, 45, 65]
+        name: '2022',
+        data: [10, 20, 40, 60, 80]
       }
     ]
   },

@@ -77,7 +77,7 @@ const MonthlyUsage = ({ direction, warning }) => {
   // ** Chart Series
   const series = [
     {
-      data: ['265', '321', '397', '502', '424', '421', '728', '1409', '656', '367', '1104', '2712']
+      data: ['9187.91', '9357.49', '12928.13', '17798.26', '20068.36', '15607.32', '28113.96', '27090.59', '19645.40', '16522.27', '34749.84', '34780.01']
     }
   ]
 
@@ -86,7 +86,7 @@ const MonthlyUsage = ({ direction, warning }) => {
       <CardHeader className='d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start'>
         <div>
           <CardTitle className='mb-75' tag='h4'>
-            Monthy Cost
+            Monthy Cost ($)
           </CardTitle>
           <CardSubtitle className='text-muted'></CardSubtitle>
         </div>
