@@ -24,8 +24,8 @@ const data = {
     budget: '56,800'
   },
   goal_overview: {
-    completed: '700',
-    inProgress: '450'
+    completed: 'db.r6g.8xlarge',
+    inProgress: '$1,627.19'
   },
   revenue: {
     thisMonth: '86,589',

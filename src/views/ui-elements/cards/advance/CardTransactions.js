@@ -10,40 +10,40 @@ import { Card, CardHeader, CardTitle, CardBody } from 'reactstrap'
 const CardTransactions = () => {
   const transactionsArr = [
     {
-      title: 'Wallet',
-      color: 'light-primary',
-      subtitle: 'Starbucks',
-      amount: '- $74',
+      title: 'Aws CloudTrail',
+      color: 'light-success',
+      
+      amount: '$81',
       Icon: Icon['Pocket'],
       down: true
     },
     {
-      title: 'Bank Transfer',
+      title: 'AmazonCloudWatch',
       color: 'light-success',
-      subtitle: 'Add Money',
-      amount: '+ $480',
+      
+      amount: '$610',
       Icon: Icon['Check']
     },
     {
-      title: 'Paypal',
-      color: 'light-danger',
-      subtitle: 'Add Money',
-      amount: '+ $590',
+      title: 'Amazon S3',
+      color: 'light-success',
+      
+      amount: '$333',
       Icon: Icon['DollarSign']
     },
     {
-      title: 'Mastercard',
-      color: 'light-warning',
-      subtitle: 'Ordered Food',
-      amount: '- $12',
+      title: 'Amazon Elastic MapReduce',
+      color: 'light-success',
+      
+      amount: '$333',
       Icon: Icon['CreditCard'],
       down: true
     },
     {
-      title: 'Transfer',
-      color: 'light-info',
-      subtitle: 'Refund',
-      amount: '+ $98',
+      title: 'Amazon FSx',
+      color: 'light-success',
+     
+      amount: '$163',
       Icon: Icon['TrendingUp']
     }
   ]
@@ -59,7 +59,7 @@ const CardTransactions = () => {
               <small>{item.subtitle}</small>
             </div>
           </div>
-          <div className={`fw-bolder ${item.down ? 'text-danger' : 'text-success'}`}>{item.amount}</div>
+          <div className={`fw-bolder ${item.down ? 'text-warning' : 'text-warning'}`}>{item.amount}</div>
         </div>
       )
     })
@@ -68,7 +68,8 @@ const CardTransactions = () => {
   return (
     <Card className='card-transaction'>
       <CardHeader>
-        <CardTitle tag='h4'>Transactions</CardTitle>
+        <CardTitle tag='h4'>Cost usage</CardTitle>
+        
         <Icon.MoreVertical size={18} className='cursor-pointer' />
       </CardHeader>
       <CardBody>{renderTransactions()}</CardBody>

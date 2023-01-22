@@ -79,7 +79,7 @@ const GoalOverview = props => {
         }
       }
     },
-    series = [68]
+    series = [348]
 
   return data !== null ? (
     <Card>
@@ -92,11 +92,11 @@ const GoalOverview = props => {
       </CardBody>
       <Row className='border-top text-center mx-0'>
         <Col xs='6' className='border-end py-1'>
-          <CardText className='text-muted mb-0'>Completed</CardText>
+          <CardText className='text-muted mb-0'>Service Name</CardText>
           <h3 className='fw-bolder mb-0'>{data.completed}</h3>
         </Col>
         <Col xs='6' className='py-1'>
-          <CardText className='text-muted mb-0'>In Progress</CardText>
+          <CardText className='text-muted mb-0'>Cost to Us</CardText>
           <h3 className='fw-bolder mb-0'>{data.inProgress}</h3>
         </Col>
       </Row>
