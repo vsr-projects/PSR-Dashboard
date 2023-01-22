@@ -14,9 +14,9 @@ const Earnings = ({ success }) => {
     dataLabels: {
       enabled: false
     },
-    legend: { show: false },
+    legend: { show: true, position: 'bottom' },
     comparedResult: [2, -3, 8],
-    labels: ['App', 'Service', 'Product'],
+    labels: ['RDS', 'EC2', 'Lambda'],
     stroke: { width: 0 },
     colors: ['#28c76f66', '#28c76f33', success],
     grid: {
@@ -44,9 +44,9 @@ const Earnings = ({ success }) => {
             total: {
               show: true,
               offsetY: 15,
-              label: 'App',
+              label: 'Lambda',
               formatter() {
-                return '53%'
+                return '15%'
               }
             }
           }
@@ -94,16 +94,16 @@ const Earnings = ({ success }) => {
       <CardBody>
         <Row>
           <Col xs='6'>
-            <CardTitle className='mb-1'>Earnings</CardTitle>
-            <div className='font-small-2'>This Month</div>
-            <h5 className='mb-1'>$4055.56</h5>
+            <CardTitle className='mb-1 pb-4'>Top Services Usage</CardTitle>
+            <div className='font-small-2'  pb-2>This Month</div>
+            <h5 className='mb-1  pb-2' >$19498.83</h5>
             <CardText className='text-muted font-small-2'>
-              <span className='fw-bolder'>68.2%</span>
-              <span> more earnings than last month.</span>
+              <span className='fw-bolder'>30%</span>
+              <span> less usage than last month.</span>
             </CardText>
           </Col>
           <Col xs='6'>
-            <Chart options={options} series={[53, 16, 31]} type='donut' height={120} />
+            <Chart options={options} series={[45, 17, 14]} type='donut' height={270} />
           </Col>
         </Row>
       </CardBody>

@@ -2,7 +2,7 @@ import mock from '../mock'
 
 const data = {
   support_tracker: {
-    title: 'Support Tracker',
+    title: 'Usage',
     last_days: ['Last 28 Days', 'Last Month', 'Last Year'],
     totalTicket: 163,
     newTicket: 29,

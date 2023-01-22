@@ -1,7 +1,7 @@
 import { lazy } from 'react'
 
 const DashboardAws = lazy(() => import('../../views/dashboard/AwsStats'))
-const DashboardRds = lazy(() => import('../../views/dashboard/RdsStats'))
+const DashboardPOC = lazy(() => import('../../views/dashboard/POC'))
 const DashboardRevo = lazy(() => import('../../views/dashboard/revo'))
 const DashboardCe = lazy(() => import('../../views/dashboard/Ce'))
 const DashboardSpm = lazy(() => import('../../views/dashboard/Spm'))
@@ -14,8 +14,8 @@ const DashboardRoutes = [
     element: <DashboardAws />
   },
   {
-    path: '/dashboard/RdsStats',
-    element: <DashboardRds />
+    path: '/dashboard/POC',
+    element: <DashboardPOC />
   },
   {
     path: '/dashboard/revo',

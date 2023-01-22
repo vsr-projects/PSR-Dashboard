@@ -40,7 +40,7 @@ import CardCongratulations from '@src/views/ui-elements/cards/advance/CardCongra
 // ** Styles
 import '@styles/react/libs/charts/apex-charts.scss'
 
-const RdsDashboard = () => {
+const POCDashboard = () => {
   // ** Context
   const { colors } = useContext(ThemeColors)
 
@@ -114,4 +114,4 @@ const RdsDashboard = () => {
   )
 }
 
-export default RdsDashboard
+export default POCDashboard
