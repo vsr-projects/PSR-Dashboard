@@ -12,11 +12,12 @@ const data = {
     ]
   },
   profit_line_chart: {
-    title: 'Last 5 Mins',
-    statistics: '90%',
+    title: 'Dashboard Active Sessions',
+    statistics: '5',
     series: [
       {
-        data: [0, 20, 5, 30, 15, 45]
+        name: 'Uptime',
+        data: [0, 2, 5, 8, 0, 10]
       }
     ]
   },

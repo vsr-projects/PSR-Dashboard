@@ -27,6 +27,7 @@ import SupportTracker from '@src/views/ui-elements/cards/analytics/SupportTracke
 import OrdersReceived from '@src/views/ui-elements/cards/statistics/OrdersReceived'
 import SubscribersGained from '@src/views/ui-elements/cards/statistics/SubscribersGained'
 import CardCongratulations from '@src/views/ui-elements/cards/advance/CardCongratulations'
+import CompletedPoc from '../../ui-elements/cards/analytics/CompletedPoc'
 
 // ** Images
 
@@ -44,45 +45,7 @@ const POCDashboard = () => {
   // ** Context
   const { colors } = useContext(ThemeColors)
 
-  // ** Vars
-  // const avatarGroupArr = [
-  //   {
-  //     imgWidth: 33,
-  //     imgHeight: 33,
-  //     title: 'Billy Hopkins',
-  //     placement: 'bottom',
-  //     img: avatar9
-  //   },
-  //   {
-  //     imgWidth: 33,
-  //     imgHeight: 33,
-  //     title: 'Amy Carson',
-  //     placement: 'bottom',
-  //     img: avatar6
-  //   },
-  //   {
-  //     imgWidth: 33,
-  //     imgHeight: 33,
-  //     title: 'Brandon Miles',
-  //     placement: 'bottom',
-  //     img: avatar8
-  //   },
-  //   {
-  //     imgWidth: 33,
-  //     imgHeight: 33,
-  //     title: 'Daisy Weber',
-  //     placement: 'bottom',
-  //     img: avatar7
-  //   },
-  //   {
-  //     imgWidth: 33,
-  //     imgHeight: 33,
-  //     title: 'Jenny Looper',
-  //     placement: 'bottom',
-  //     img: avatar20
-  //   }
-  // ]
- 
+
   return (
     <div id='dashboard-analytics'>
       {/* <Row className='match-height'>
@@ -103,13 +66,12 @@ const POCDashboard = () => {
         <Col lg='6' xs='12'>
           <SupportTracker primary={colors.primary.main} danger={colors.danger.main} />
         </Col>
-      </Row>
-      
-      <Row className='match-height'>
-        <Col xs='12'>
-          <InvoiceList />
+        <Col lg='6' xs='12'>
+          <CompletedPoc primary={colors.primary.main} danger={colors.danger.main} />
         </Col>
       </Row>
+      
+      
     </div>
   )
 }

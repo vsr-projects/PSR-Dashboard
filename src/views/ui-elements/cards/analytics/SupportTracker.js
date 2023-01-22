@@ -5,15 +5,18 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Chart from 'react-apexcharts'
 
+// ** Utils
+import { kFormatter } from '@utils'
+
 // ** Reactstrap Imports
 import {
   Row,
   Col,
   Card,
+  Button,
   CardBody,
   CardText,
-  CardTitle,
-  CardHeader,
+  Progress,
   DropdownMenu,
   DropdownItem,
   DropdownToggle,
@@ -21,104 +24,102 @@ import {
 } from 'reactstrap'
 
 const SupportTracker = props => {
-  // ** State
+  // ** States
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    axios.get('/card/card-analytics/support-tracker').then(res => setData(res.data))
+    axios.get('/card/card-analytics/avg-sessions').then(res => setData(res.data))
     return () => setData(null)
   }, [])
 
   const options = {
+      chart: {
+        sparkline: { enabled: true },
+        toolbar: { show: false }
+      },
+      grid: {
+        show: false,
+        padding: {
+          left: 0,
+          right: 0
+        }
+      },
+      states: {
+        hover: {
+          filter: 'none'
+        }
+      },
+      colors: ['#ebf0f7', '#ebf0f7', props.primary, '#ebf0f7', '#ebf0f7', '#ebf0f7'],
       plotOptions: {
-        radialBar: {
-          size: 150,
-          offsetY: 20,
-          startAngle: -150,
-          endAngle: 150,
-          hollow: {
-            size: '65%'
-          },
-          track: {
-            background: '#fff',
-            strokeWidth: '100%'
-          },
-          dataLabels: {
-            name: {
-              offsetY: -5,
-              fontFamily: 'Montserrat',
-              fontSize: '1rem'
-            },
-            value: {
-              offsetY: 15,
-              fontFamily: 'Montserrat',
-              fontSize: '1.714rem'
-            }
-          }
+        bar: {
+          columnWidth: '45%',
+          distributed: true,
+          borderRadius: 8,
+          borderRadiusApplication: 'end'
         }
       },
-      colors: [props.danger],
-      fill: {
-        type: 'gradient',
-        gradient: {
-          shade: 'dark',
-          type: 'horizontal',
-          shadeIntensity: 0.5,
-          gradientToColors: [props.primary],
-          inverseColors: true,
-          opacityFrom: 1,
-          opacityTo: 1,
-          stops: [0, 100]
-        }
+      tooltip: {
+        x: { show: false }
       },
-      stroke: {
-        dashArray: 8
-      },
-      labels: ['Completed Tickets']
+      xaxis: {
+        type: 'numeric'
+      }
     },
-    series = [83]
+    series = [
+      {
+        name: 'Sessions',
+        data: [75, 125, 225, 175, 125, 75, 25]
+      }
+    ]
 
   return data !== null ? (
     <Card>
-      <CardHeader className='pb-0'>
-        <CardTitle tag='h4'>{data.title}</CardTitle>
-        <UncontrolledDropdown className='chart-dropdown'>
-          <DropdownToggle color='' className='bg-transparent btn-sm border-0 p-50'>
-            Last 7 days
-          </DropdownToggle>
-          <DropdownMenu end>
-            {data.last_days.map(item => (
-              <DropdownItem className='w-100' key={item}>
-                {item}
-              </DropdownItem>
-            ))}
-          </DropdownMenu>
-        </UncontrolledDropdown>
-      </CardHeader>
       <CardBody>
-        <Row>
-          <Col sm='2' className='d-flex flex-column flex-wrap text-center'>
-            <h1 className='font-large-2 fw-bolder mt-2 mb-0'>{data.totalTicket}</h1>
-            <CardText>Tickets</CardText>
+        <Row className='pb-50'>
+          <Col
+            sm={{ size: 6, order: 1 }}
+            xs={{ order: 2 }}
+            className='d-flex justify-content-between flex-column mt-lg-0 mt-2'
+          >
+            <div className='session-info mb-1 mb-lg-0'>
+              <h2 className='fw-bold mb-25'>4</h2>
+              <CardText className='fw-bold mb-2'>Upcoming POCs </CardText>
+              {/* <h5 className='font-medium-2'>
+                <span className='text-success me-50'>{data.growth}</span>
+                <span className='fw-normal'>vs last 7 days</span>
+              </h5> */}
+            </div>
+            
           </Col>
-          <Col sm='10' className='d-flex justify-content-center'>
-            <Chart options={options} series={series} type='radialBar' height={270} id='support-tracker-card' />
+          <Col
+            sm={{ size: 6, order: 2 }}
+            xs={{ order: 1 }}
+            className='d-flex justify-content-between flex-column text-end'
+          >
+
+         
           </Col>
         </Row>
-        <div className='d-flex justify-content-between mt-1'>
-          <div className='text-center'>
-            <CardText className='mb-50'>New Tickets</CardText>
-            <span className='font-large-1 fw-bold'>{data.newTicket}</span>
-          </div>
-          <div className='text-center'>
-            <CardText className='mb-50'>Open Tickets</CardText>
-            <span className='font-large-1 fw-bold'>{data.openTicket}</span>
-          </div>
-          <div className='text-center'>
-            <CardText className='mb-50'>Response Time</CardText>
-            <span className='font-large-1 fw-bold'>{data.responseTime}d</span>
-          </div>
-        </div>
+        <hr />
+        <Row className='pt-50'>
+          <Col className='mb-2' md='6' sm='12'>
+            <p className='mb-50'>Neoload Ui Rendering</p>
+            <Progress className='avg-session-progress mt-25' value='1' />
+          </Col>
+          <Col className='mb-2' md='6' sm='12'>
+            <p className='mb-50'>Neoload 9.0</p>
+            <Progress className='avg-session-progress progress-bar-warning mt-25' value='1' />
+          </Col>
+          <Col md='6' sm='12'>
+            <p className='mb-50'>DynamoDB</p>
+            <Progress className='avg-session-progress progress-bar-danger mt-25' value='1' />
+          </Col>
+          <Col md='6' sm='12'>
+            <p className='mb-50 '>RedisDb</p>
+            <Progress className='avg-session-progress progress-bar-success mt-25' value='1' />
+          </Col>
+          
+        </Row>
       </CardBody>
     </Card>
   ) : null

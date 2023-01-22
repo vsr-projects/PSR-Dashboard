@@ -23,7 +23,7 @@ import {
   UncontrolledDropdown
 } from 'reactstrap'
 
-const AvgSessions = props => {
+const CompletedPoc = props => {
   // ** States
   const [data, setData] = useState(null)
 
@@ -82,8 +82,8 @@ const AvgSessions = props => {
             className='d-flex justify-content-between flex-column mt-lg-0 mt-2'
           >
             <div className='session-info mb-1 mb-lg-0'>
-              <h2 className='fw-bold mb-25'>{kFormatter(data.sessions)}</h2>
-              <CardText className='fw-bold mb-2'>Ongoing POCs </CardText>
+              <h2 className='fw-bold mb-25'>4</h2>
+              <CardText className='fw-bold mb-2'>Completed POCs </CardText>
               {/* <h5 className='font-medium-2'>
                 <span className='text-success me-50'>{data.growth}</span>
                 <span className='fw-normal'>vs last 7 days</span>
@@ -103,28 +103,25 @@ const AvgSessions = props => {
         <hr />
         <Row className='pt-50'>
           <Col className='mb-2' md='6' sm='12'>
-            <p className='mb-50'>Ec2 Graviton</p>
-            <Progress className='avg-session-progress mt-25' value='60' />
+            <p className='mb-50'>Read Replica(Java Application)</p>
+            <Progress className='avg-session-progress mt-25' value='100' />
           </Col>
           <Col className='mb-2' md='6' sm='12'>
-            <p className='mb-50'>Serverless RDS</p>
-            <Progress className='avg-session-progress progress-bar-warning mt-25' value='60' />
+            <p className='mb-50'>Read Replica(.NET Application)</p>
+            <Progress className='avg-session-progress progress-bar-warning mt-25' value='100' />
           </Col>
           <Col md='6' sm='12'>
-            <p className='mb-50'>Snapstart</p>
-            <Progress className='avg-session-progress progress-bar-danger mt-25' value='60' />
+            <p className='mb-50'>Rds Proxy(Java Application)</p>
+            <Progress className='avg-session-progress progress-bar-danger mt-25' value='100' />
           </Col>
           <Col md='6' sm='12'>
-            <p className='mb-50 '>Data Dog</p>
-            <Progress className='avg-session-progress progress-bar-success mt-25' value='60' />
+            <p className='mb-50 '>Rds Proxy(.NET Application)</p>
+            <Progress className='avg-session-progress progress-bar-success mt-25' value='100' />
           </Col>
-          <Col md='12' sm='12'>
-            <p className='mb-50 pt-2 ' >Unravel</p>
-            <Progress className='avg-session-progress progress-bar-success mt-25' value='60' />
-          </Col>
+          
         </Row>
       </CardBody>
     </Card>
   ) : null
 }
-export default AvgSessions
+export default CompletedPoc

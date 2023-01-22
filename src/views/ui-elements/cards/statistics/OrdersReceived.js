@@ -70,11 +70,10 @@ const OrdersReceived = ({ kFormatter, warning }) => {
     <StatsWithAreaChart
       icon={<Package size={21} />}
       color='warning'
-      stats={kFormatter(data.analyticsData.orders)}
-      statTitle='Orders Received'
+      stats='ZDH'
+      statTitle='Current Release Version - 11.0'
       options={options}
-      series={data.series}
-      type='area'
+     
     />
   ) : null
 }

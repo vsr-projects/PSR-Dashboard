@@ -8,7 +8,6 @@ import { Row, Col } from 'reactstrap'
 import { ThemeColors } from '@src/utility/context/ThemeColors'
 
 // ** Demo Components
-import CompanyTable from './CompanyTable'
 import Earnings from '@src/views/ui-elements/cards/analytics/Earnings'
 import CardMedal from '@src/views/ui-elements/cards/advance/CardMedal'
 import CardMeetup from '@src/views/ui-elements/cards/advance/CardMeetup'
@@ -60,21 +59,17 @@ const SpmDashboard = () => {
         </Col>
       </Row>
       <Row className='match-height'>
-        <Col lg='8' xs='12'>
-          <CompanyTable />
-        </Col>
         <Col lg='4' md='6' xs='12'>
-          <CardMeetup />
-        </Col>
-        <Col lg='4' md='6' xs='12'>
-          <CardBrowserStates colors={colors} trackBgColor={trackBgColor} />
+          <CardTransactions />
         </Col>
         <Col lg='4' md='6' xs='12'>
           <GoalOverview success={colors.success.main} />
         </Col>
         <Col lg='4' md='6' xs='12'>
-          <CardTransactions />
+          <CardBrowserStates colors={colors} trackBgColor={trackBgColor} />
         </Col>
+        
+        
       </Row>
     </div>
   )

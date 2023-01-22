@@ -2,19 +2,18 @@ import mock from '../mock'
 
 const data = {
   support_tracker: {
-    title: 'Usage',
+    title: 'Upcoming POCs',
     last_days: ['Last 28 Days', 'Last Month', 'Last Year'],
-    totalTicket: 163,
+    sessions: 3,
     newTicket: 29,
     openTicket: 63,
     responseTime: 1
   },
   avg_sessions: {
-    sessions: 2700,
+    sessions: 5,
     last_days: ['Last 28 Days', 'Last Month', 'Last Year'],
     growth: '+5.2%',
-    goal: 100000,
-    users: 100000,
+    goal: 0.71,
     retention: 90,
     duration: 1
   },
