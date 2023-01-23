@@ -8,10 +8,10 @@ const data = {
   accountSetting: {
     general: {
       avatar: avatar11,
-      username: 'johndoe',
-      fullName: 'John Doe',
-      email: 'granger007@hogward.com',
-      company: 'PIXINVENT'
+      username: 'vaibhav',
+      fullName: 'Vaibhav Singh Rawat',
+      email: 'vsrbruh@gmail.com',
+      company: 'ZS Associates'
     },
     info: {
       bio: '',
@@ -32,7 +32,7 @@ const data = {
       connections: {
         twitter: {
           profileImg: avatar11,
-          id: 'johndoe'
+          id: 'vsr'
         },
         google: {
           profileImg: avatar3,
