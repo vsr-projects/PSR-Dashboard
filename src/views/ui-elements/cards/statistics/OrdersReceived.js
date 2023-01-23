@@ -70,7 +70,7 @@ const OrdersReceived = ({ kFormatter, warning }) => {
     <StatsWithAreaChart
       icon={<Package size={21} />}
       color='warning'
-      stats='ZDH'
+      stats='ZDM'
       statTitle='Current Release Version - 11.0'
       options={options}
      
