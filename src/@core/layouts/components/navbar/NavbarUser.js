@@ -1,9 +1,9 @@
 // ** Dropdowns Imports
 import IntlDropdown from './IntlDropdown'
-import CartDropdown from './CartDropdown'
+
 import UserDropdown from './UserDropdown'
 import NavbarSearch from './NavbarSearch'
-import NotificationDropdown from './NotificationDropdown'
+
 
 // ** Third Party Components
 import { Sun, Moon } from 'react-feather'
@@ -33,8 +33,7 @@ const NavbarUser = props => {
         </NavLink>
       </NavItem>
       <NavbarSearch />
-      <CartDropdown />
-      <NotificationDropdown />
+     
       <UserDropdown />
     </ul>
   )
