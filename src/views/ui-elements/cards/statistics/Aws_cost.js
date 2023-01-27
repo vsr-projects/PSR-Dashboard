@@ -19,7 +19,7 @@ const Aws_cost = ({ kFormatter }) => {
 
   return data !== null ? (
     <StatsWithAreaChart
-      icon={<DollarSign size={21} />}
+      icon={<DollarSign size={50} />}
       color='primary'
       stats={kFormatter(data.analyticsData.subscribers)}
       statTitle='Monthly Cost'
