@@ -23,7 +23,7 @@ import CardBrowserStates from '@src/views/ui-elements/cards/advance/CardBrowserS
 import '@styles/react/libs/charts/apex-charts.scss'
 import '@styles/base/pages/dashboard-ecommerce.scss'
 
-const SpmDashboard = () => {
+const repDashboard = () => {
   // ** Context
   const { colors } = useContext(ThemeColors)
 
@@ -75,4 +75,4 @@ const SpmDashboard = () => {
   )
 }
 
-export default SpmDashboard
+export default repDashboard

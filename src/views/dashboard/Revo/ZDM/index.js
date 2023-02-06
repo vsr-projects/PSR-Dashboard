@@ -41,8 +41,8 @@ import avatar20 from '@src/assets/images/portrait/small/avatar-s-20.jpg'
 // ** Styles
 import '@styles/react/libs/charts/apex-charts.scss'
 
-const RevoDashboard = () => {
-  // ** Context
+const ZDMDashboard = () => {
+  // ** Context   
   const { colors } = useContext(ThemeColors)
 
   // ** Vars
@@ -180,4 +180,4 @@ const RevoDashboard = () => {
   )
 }
 
-export default RevoDashboard
+export default ZDMDashboard

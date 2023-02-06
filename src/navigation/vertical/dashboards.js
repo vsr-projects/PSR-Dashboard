@@ -32,13 +32,13 @@ export default [
             id: 'ZdhDash',
             title: 'ZDH',
             icon: <Circle size={12} />,
-            navLink: '/dashboard/revo'
+            navLink: '/dashboard/revo/ZDH'
           },
           {
             id: 'ZdmDash',
             title: 'ZDM',
             icon: <Circle size={12} />,
-            navLink: '/dashboard/revo2'
+            navLink: '/dashboard/revo/ZDM'
           }
         ]
       },
@@ -52,19 +52,19 @@ export default [
             id: 'FIDash',
             title: 'Field Insights',
             icon: <Circle size={12} />,
-            navLink: '/dashboard/Ce'
+            navLink: '/dashboard/Ce/FI'
           },
           {
             id: 'OcDash',
             title: 'OC',
             icon: <Circle size={12} />,
-            navLink: ''
+            navLink: '/dashboard/Ce/Oc'
           },
           {
-            id: 'ZacDash',
+            id: 'ZACDash',
             title: 'Zac',
             icon: <Circle size={12} />,
-            navLink: ''
+            navLink: '/dashboard/Ce/ZAC'
           }
         ]
           
@@ -78,19 +78,19 @@ export default [
             id: 'AlDash',
             title: 'Alignments',
             icon: <Circle size={12} />,
-            navLink: '/dashboard/Spm'
+            navLink: '/dashboard/Spm/al'
           },
           {
             id: 'IcopsDash',
             title: 'IC-Ops',
             icon: <Circle size={12} />,
-            navLink: ''
+            navLink: '/dashboard/Spm/icops'
           },
           {
             id: 'RepDash',
             title: 'Reports',
             icon: <Circle size={12} />,
-            navLink: ''
+            navLink: '/dashboard/Spm/reports'
           }
         ]
       },

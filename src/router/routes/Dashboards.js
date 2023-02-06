@@ -2,9 +2,15 @@ import { lazy } from 'react'
 
 const DashboardAws = lazy(() => import('../../views/dashboard/AwsStats'))
 const DashboardPOC = lazy(() => import('../../views/dashboard/POC'))
-const DashboardRevo = lazy(() => import('../../views/dashboard/revo'))
-const DashboardCe = lazy(() => import('../../views/dashboard/Ce'))
-const DashboardSpm = lazy(() => import('../../views/dashboard/Spm'))
+const DashboardZDH = lazy(() => import('../../views/dashboard/revo/ZDH'))
+const DashboardZDM = lazy(() => import('../../views/dashboard/revo/ZDM'))
+const DashboardFI = lazy(() => import('../../views/dashboard/Ce/FI'))
+const DashboardOc = lazy(() => import('../../views/dashboard/Ce/Oc'))
+const DashboardZAC = lazy(() => import('../../views/dashboard/Ce/ZAC'))
+const Dashboardal = lazy(() => import('../../views/dashboard/Spm/al'))
+const Dashboardicops = lazy(() => import('../../views/dashboard/Spm/icops'))
+const Dashboardrep = lazy(() => import('../../views/dashboard/Spm/reports'))
+
 const DashboardJav = lazy(() => import('../../views/dashboard/Javelin'))
 
 
@@ -18,16 +24,36 @@ const DashboardRoutes = [
     element: <DashboardPOC />
   },
   {
-    path: '/dashboard/revo',
-    element: <DashboardRevo />
+    path: '/dashboard/revo/ZDH',
+    element: <DashboardZDH />
   },
   {
-    path: '/dashboard/CE',
-    element: <DashboardCe />
+    path: '/dashboard/revo/ZDM',
+    element: <DashboardZDM />
   },
   {
-    path: '/dashboard/Spm',
-    element: <DashboardSpm />
+    path: '/dashboard/Ce/Oc',
+    element: <DashboardOc />
+  },
+  {
+    path: '/dashboard/Ce/ZAC',
+    element: <DashboardZAC />
+  },
+  {
+    path: '/dashboard/Ce/FI',
+    element: <DashboardFI />
+  },
+  {
+    path: '/dashboard/Spm/al',
+    element: <Dashboardal />
+  },
+  {
+    path: '/dashboard/Spm/icops',
+    element: <Dashboardicops />
+  },
+  {
+    path: '/dashboard/Spm/reports',
+    element: <Dashboardrep />
   },
   {
     path: '/dashboard/Javelin',

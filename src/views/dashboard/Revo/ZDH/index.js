@@ -41,8 +41,8 @@ import avatar20 from '@src/assets/images/portrait/small/avatar-s-20.jpg'
 // ** Styles
 import '@styles/react/libs/charts/apex-charts.scss'
 
-const CeDashboard = () => {
-  // ** Context
+const ZDHDashboard = () => {
+  // ** Context   
   const { colors } = useContext(ThemeColors)
 
   // ** Vars
@@ -180,4 +180,4 @@ const CeDashboard = () => {
   )
 }
 
-export default CeDashboard
+export default ZDHDashboard
