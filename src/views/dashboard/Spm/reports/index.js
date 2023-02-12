@@ -8,6 +8,7 @@ import { Row, Col } from 'reactstrap'
 import { ThemeColors } from '@src/utility/context/ThemeColors'
 
 // ** Demo Components
+import CompanyTable from './CompanyTable'
 import Earnings from '@src/views/ui-elements/cards/analytics/Earnings'
 import CardMedal from '@src/views/ui-elements/cards/advance/CardMedal'
 import CardMeetup from '@src/views/ui-elements/cards/advance/CardMeetup'
@@ -18,12 +19,14 @@ import OrdersBarChart from '@src/views/ui-elements/cards/statistics/OrdersBarCha
 import CardTransactions from '@src/views/ui-elements/cards/advance/CardTransactions'
 import ProfitLineChart from '@src/views/ui-elements/cards/statistics/ProfitLineChart'
 import CardBrowserStates from '@src/views/ui-elements/cards/advance/CardBrowserState'
+import FpReports from '@src/views/ui-elements/cards/analytics/FpReports'
+import FPhc from '@src/views/ui-elements/cards/analytics/FPhc'
 
 // ** Styles
 import '@styles/react/libs/charts/apex-charts.scss'
 import '@styles/base/pages/dashboard-ecommerce.scss'
 
-const repDashboard = () => {
+const RepDashboard = () => {
   // ** Context
   const { colors } = useContext(ThemeColors)
 
@@ -32,14 +35,6 @@ const repDashboard = () => {
 
   return (
     <div id='dashboard-ecommerce'>
-      <Row className='match-height'>
-        <Col xl='4' md='6' xs='12'>
-          <CardMedal />
-        </Col>
-        <Col xl='8' md='6' xs='12'>
-          <StatsCard cols={{ xl: '3', sm: '6' }} />
-        </Col>
-      </Row>
       <Row className='match-height'>
         <Col lg='4' md='12'>
           <Row className='match-height'>
@@ -55,7 +50,7 @@ const repDashboard = () => {
           </Row>
         </Col>
         <Col lg='8' md='12'>
-          <RevenueReport primary={colors.primary.main} warning={colors.warning.main} />
+          <FPhc primary={colors.primary.main} warning={colors.warning.main} />
         </Col>
       </Row>
       <Row className='match-height'>
@@ -75,4 +70,4 @@ const repDashboard = () => {
   )
 }
 
-export default repDashboard
+export default RepDashboard
