@@ -19,8 +19,11 @@ import OrdersBarChart from '@src/views/ui-elements/cards/statistics/OrdersBarCha
 import CardTransactions from '@src/views/ui-elements/cards/advance/CardTransactions'
 import ProfitLineChart from '@src/views/ui-elements/cards/statistics/ProfitLineChart'
 import CardBrowserStates from '@src/views/ui-elements/cards/advance/CardBrowserState'
-import FpReports from '@src/views/ui-elements/cards/analytics/FpReports'
+import RepRds from '@src/views/ui-elements/cards/analytics/RepRds'
 import FPhc from '@src/views/ui-elements/cards/analytics/FPhc'
+import RepUsers from '../../../ui-elements/cards/analytics/RepUsers'
+import RepNfr from '../../../ui-elements/cards/analytics/RepNfr'
+import RepDv from '../../../ui-elements/cards/analytics/RepDv'
 
 // ** Styles
 import '@styles/react/libs/charts/apex-charts.scss'
@@ -51,6 +54,22 @@ const RepDashboard = () => {
         </Col>
         <Col lg='8' md='12'>
           <FPhc primary={colors.primary.main} warning={colors.warning.main} />
+        </Col>
+      </Row>
+      <Row className='match-height'>
+        <Col lg='6' md='10'>
+          <RepRds primary={colors.primary.main} warning={colors.warning.main} />
+        </Col>
+        <Col lg='6' md='10'>
+          <RepUsers primary={colors.primary.main} warning={colors.warning.main} />
+        </Col>
+      </Row>
+      <Row className='match-height'>
+        <Col lg='6' md='10'>
+          <RepNfr primary={colors.primary.main} warning={colors.warning.main} />
+        </Col>
+        <Col lg='6' md='10'>
+          <RepDv primary={colors.primary.main} warning={colors.warning.main} />
         </Col>
       </Row>
       <Row className='match-height'>

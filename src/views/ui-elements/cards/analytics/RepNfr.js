@@ -23,11 +23,37 @@
 // ** Third Party Components
 import Chart from 'react-apexcharts'
 import { ArrowDown } from 'react-feather'
-
+import { useState } from 'react'
+import csv from "./data_summary_nfr_breaching.csv"
 // ** Reactstrap Imports
 import { Card, CardHeader, CardTitle, CardBody, CardSubtitle, Badge } from 'reactstrap'
+import { release } from 'process'
 
-const FpReports = ({ direction, warning }) => {
+const RepNfr = ({ direction, warning }) => {
+
+
+  function create_arrays(csv)
+  { 
+    console.log(csv)
+    let label = [];
+    let value = [];
+    let nfr = [];
+    csv.map(element=>{
+      label.push(element["\ufeffRelease"])
+      value.push(element["transactions_breaching_nfr"])
+      nfr.push(element["total_no_of_transactions"])
+    })
+    let obj={
+      label:label,
+      value:value,
+      nfr:nfr
+    }
+    console.log(obj);
+    return obj;
+  }
+
+
+
   // ** Chart Options
   const options = {
     chart: {
@@ -60,34 +86,41 @@ const FpReports = ({ direction, warning }) => {
         }
       }
     },
+    
     tooltip: {
       custom(data) {
         return `<div class='px-1 py-50'>
-              <span>${data.series[data.seriesIndex][data.dataPointIndex]}value</span>
+              <span>${data.series[data.seriesIndex][data.dataPointIndex]}</span>
             </div>`
       }
     },
-    xaxis: {
-        categories: ['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8'] },
-    yaxis: {
-      opposite: direction === ['150', '170', '200', '200', '220', '250', '280', '300']
-
-    }
+    xaxis: {  
+        name:release,
+        categories:   create_arrays(csv).label 
+      },
+    
+    
   }
 
   // ** Chart Series
   const series = [
     {
-      data: ['0.71', '0.76', '0.77', '0.69', '0.73', '0.72', '0.73', '0.77']
+      name: "Transacations Breaching NFR",
+      data: create_arrays(csv).value
+    },
+    {
+      name: "total_no_of_transactions",
+      data : create_arrays(csv).nfr
     }
   ]
 
+  console.log(create_arrays(csv).nfr)
   return (
     <Card>
       <CardHeader className='d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start'>
         <div>
           <CardTitle className='mb-75' tag='h4'>
-            Appdex 
+            NFR Breachings
           </CardTitle>
           <CardSubtitle className='text-muted'></CardSubtitle>
         </div>
@@ -100,4 +133,4 @@ const FpReports = ({ direction, warning }) => {
   )
 }
 
-export default FpReports
+export default RepNfr
