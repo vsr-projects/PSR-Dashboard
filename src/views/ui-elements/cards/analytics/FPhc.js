@@ -94,10 +94,14 @@ const FPhc = ({ direction, warning }) => {
 
     xaxis: {
         categories:   create_arrays(csv).label },
-    // yaxis: {
-    //   opposite:   create_arrays(csv).values
-
-    // }
+    yaxis:{
+      title: {
+        text: "AppDex",
+        style: {
+          color: '#008FFB',
+        }
+      },
+    }
   }
 
   // ** Chart Series

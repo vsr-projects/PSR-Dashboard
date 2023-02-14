@@ -94,6 +94,15 @@ const RepUsers = ({ direction, warning }) => {
 
     xaxis: {
         categories:   create_arrays(csv).label },
+
+    yaxis:{
+      title: {
+        text: "Users",
+        style: {
+          color: '#008FFB',
+        }
+      },
+    }
    
   }
 

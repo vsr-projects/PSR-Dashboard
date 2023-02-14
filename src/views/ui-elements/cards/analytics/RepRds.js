@@ -89,12 +89,20 @@ const RepRds = ({ direction, warning }) => {
           show: true
         }
       }
+      
     },
     
 
     xaxis: {
         categories:   create_arrays(csv).label },
-   
+    yaxis:{
+        title: {
+          text: "Rds Cpu Utilization",
+          style: {
+            color: '#008FFB',
+          }
+        },
+      }
   }
 
   // ** Chart Series

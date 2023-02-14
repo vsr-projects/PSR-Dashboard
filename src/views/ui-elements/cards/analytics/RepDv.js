@@ -102,6 +102,14 @@ const RepDv = ({ direction, warning }) => {
   xaxis: {
     categories:create_arrays(csv).label,
   },
+  yaxis:{
+    title: {
+      text: "Data Volume",
+      style: {
+        color: '#008FFB',
+      }
+    },
+  },
   };
 let  series= [
   {
