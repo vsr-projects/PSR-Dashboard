@@ -93,11 +93,11 @@ const RepNfr = ({ direction, warning }) => {
   };
 let  series= [
   {
-    name:"total_no_of_transactions",
+    name:"Total no of transactions",
     data:create_arrays(csv).nfr
   },
  {
-  name:"transactions_breaching_nfr",
+  name:"Transactions breaching nfr",
   data:create_arrays(csv).value
     
   },
