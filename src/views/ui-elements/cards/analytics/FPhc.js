@@ -64,17 +64,17 @@ const FPhc = ({ direction, warning }) => {
       zoom: {
         enabled: false
       },
-      parentHeightOffset: 0,
-      toolbar: {
-        show: false
-      }
-    },
+    //   parentHeightOffset: 0,
+    //   toolbar: {
+    //     show: false
+    //   }
+    // },
 
-    markers: {
-      strokeWidth: 7,
-      strokeOpacity: 1,
-      strokeColors: ['#fff'],
-      colors: [warning]
+    // markers: {
+    //   strokeWidth: 7,
+    //   strokeOpacity: 1,
+    //   strokeColors: ['#fff'],
+    //   colors: [warning]
     },
     dataLabels: {
       enabled: false
@@ -91,24 +91,19 @@ const FPhc = ({ direction, warning }) => {
       }
     },
     
-    tooltip: {
-      custom(data) {
-        return `<div class='px-1 py-50'>
-              <span>${data.series[data.seriesIndex][data.dataPointIndex]}value</span>
-            </div>`
-      }
-    },
+
     xaxis: {
         categories:   create_arrays(csv).label },
-    yaxis: {
-      opposite:   create_arrays(csv).values
+    // yaxis: {
+    //   opposite:   create_arrays(csv).values
 
-    }
+    // }
   }
 
   // ** Chart Series
   const series = [
     {
+      name: "Appdex",
       data:   create_arrays(csv).values
     }
   ]

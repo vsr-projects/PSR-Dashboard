@@ -91,19 +91,10 @@ const RepUsers = ({ direction, warning }) => {
       }
     },
     
-    tooltip: {
-      custom(data) {
-        return `<div class='px-1 py-50'>
-              <span>${data.series[data.seriesIndex][data.dataPointIndex]}value</span>
-            </div>`
-      }
-    },
+
     xaxis: {
         categories:   create_arrays(csv).label },
-    yaxis: {
-      opposite:   create_arrays(csv).values
-
-    }
+   
   }
 
   // ** Chart Series

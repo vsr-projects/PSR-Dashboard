@@ -56,67 +56,59 @@ const RepNfr = ({ direction, warning }) => {
 
   // ** Chart Options
   const options = {
+   
     chart: {
-      zoom: {
-        enabled: false
+    type: 'bar',
+    height: 430
+  },
+  plotOptions: {
+    bar: {
+      horizontal: false,
+      dataLabels: {
+        position: 'top',
       },
-      parentHeightOffset: 0,
-      toolbar: {
-        show: false
-      }
-    },
-
-    markers: {
-      strokeWidth: 7,
-      strokeOpacity: 1,
-      strokeColors: ['#fff'],
-      colors: [warning]
-    },
-    dataLabels: {
-      enabled: false
-    },
-    stroke: {
-      curve: 'straight'
-    },
-    colors: [warning],
-    grid: {
-      xaxis: {
-        lines: {
-          show: true
-        }
-      }
-    },
+    }
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  //   offsetX: -6,
+  //   style: {
+  //     fontSize: '12px',
+  //     colors: ['#fff']
+  //   }
+  // },
+  // stroke: {
+  //   show: true,
+  //   width: 1,
+  //   colors: ['#fff']
+  // },
+  tooltip: {
+    shared: true,
+    intersect: false
+  },
+  xaxis: {
+    categories:create_arrays(csv).label,
+  },
+  };
+let  series= [
+  {
+    name:"total_no_of_transactions",
+    data:create_arrays(csv).nfr
+  },
+ {
+  name:"transactions_breaching_nfr",
+  data:create_arrays(csv).value
     
-    tooltip: {
-      custom(data) {
-        return `<div class='px-1 py-50'>
-              <span>${data.series[data.seriesIndex][data.dataPointIndex]}</span>
-            </div>`
-      }
-    },
-    xaxis: {  
-        name:release,
-        categories:   create_arrays(csv).label 
-      },
-    
-    
-  }
+  },
+ 
+]
 
   // ** Chart Series
-  const series = [
-    {
-      name: "Transacations Breaching NFR",
-      data: create_arrays(csv).value
-    },
-    {
-      name: "total_no_of_transactions",
-      data : create_arrays(csv).nfr
-    }
-  ]
-
+ 
   console.log(create_arrays(csv).nfr)
   return (
-    <Card>
+    <Card >
       <CardHeader className='d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start'>
         <div>
           <CardTitle className='mb-75' tag='h4'>
@@ -127,7 +119,7 @@ const RepNfr = ({ direction, warning }) => {
         
       </CardHeader>
       <CardBody>
-        <Chart options={options} series={series} type='line' height={400} />
+        <Chart options={options} series={series} type={"bar"}   height={400} />
       </CardBody>
     </Card>
   )

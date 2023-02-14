@@ -28,6 +28,7 @@ import csv from "./data_summary_fivepdv.csv"
 // ** Reactstrap Imports
 import { Card, CardHeader, CardTitle, CardBody, CardSubtitle, Badge } from 'reactstrap'
 import { release } from 'process'
+import { YAxis } from 'recharts'
 
 const RepDv = ({ direction, warning }) => {
 
@@ -38,6 +39,7 @@ const RepDv = ({ direction, warning }) => {
 
   function create_arrays(csv)
   { 
+    console.log(csv)
     let label = [];
     let v1 = [];
     let v2 = [];
@@ -68,76 +70,67 @@ const RepDv = ({ direction, warning }) => {
 
 
   // ** Chart Options
-  const options = {
+ const options = {
+   
     chart: {
-      zoom: {
-        enabled: false
-      },
-      parentHeightOffset: 0,
-      toolbar: {
-        show: false
-      }
-    },
-
-    markers: {
-      strokeWidth: 7,
-      strokeOpacity: 1,
-      strokeColors: ['#fff'],
-      colors: [warning]
-    },
-    dataLabels: {
-      enabled: false
-    },
-    stroke: {
-      curve: 'straight'
-    },
-    colors: [warning],
-    grid: {
-      xaxis: {
-        lines: {
-          show: true
-        }
-      }
-    },
+    type: 'bar',
+    height: 430
+  },
+  plotOptions: {
+    bar: {
+      horizontal: false,
+    }
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  //   offsetX: -6,
+  //   style: {
+  //     fontSize: '12px',
+  //     colors: ['#fff']
+  //   }
+  // },
+  // stroke: {
+  //   show: true,
+  //   width: 1,
+  //   colors: ['#fff']
+  // },
+  tooltip: {
+    shared: true,
+    intersect: false
+  },
+  xaxis: {
+    categories:create_arrays(csv).label,
+  },
+  };
+let  series= [
+  {
+    name:"data_volume_table1",
+    data:create_arrays(csv).v1
+  },
+ {
+  name:"data_volume_table2",
+  data:create_arrays(csv).v2
     
-    tooltip: {
-      custom(data) {
-        return `<div class='px-1 py-50'>
-              <span>${data.series[data.seriesIndex][data.dataPointIndex]}</span>
-            </div>`
-      }
-    },
-    xaxis: {  
-        name:release,
-        categories:   create_arrays(csv).label
-       },
-    
+  },
+  {
+    name:"data_volume_table3",
+    data:create_arrays(csv).v3
+  },
+  {
+    name:"data_volume_table4",
+    data:create_arrays(csv).v4
+  },
+  {
+    name:"data_volume_table5",
+    data:create_arrays(csv).v5
   }
+ 
+]
 
   // ** Chart Series
 
-  const  series = [
-    {
-      name: "data_volume_table1",
-      data: create_arrays(csv).v1
-    },
-    {
-      name: "data_volume_table2",
-      data : create_arrays(csv).v2
-    },
-    {
-      name: "data_volume_table3",
-      data : create_arrays(csv).v3
-    },
-    {
-      name: "data_volume_table4",
-      data : create_arrays(csv).v4
-    },
-    {
-      name: "data_volume_table5",
-      data : create_arrays(csv).v5
-    }
-  ]
+ 
 
   return (
     <Card>
