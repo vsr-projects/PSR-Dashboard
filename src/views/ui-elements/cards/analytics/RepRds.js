@@ -100,6 +100,7 @@ const RepRds = ({ direction, warning }) => {
   // ** Chart Series
   const series = [
     {
+      name:"Utilization",
       data:   create_arrays(csv).values
     }
   ]
