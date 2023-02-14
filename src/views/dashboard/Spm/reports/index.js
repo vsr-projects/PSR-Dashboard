@@ -72,7 +72,7 @@ const RepDashboard = () => {
           <RepDv primary={colors.primary.main} warning={colors.warning.main} />
         </Col>
       </Row>
-      <Row className='match-height'>
+      {/* <Row className='match-height'>
         <Col lg='4' md='6' xs='12'>
           <CardTransactions />
         </Col>
@@ -84,7 +84,7 @@ const RepDashboard = () => {
         </Col>
         
         
-      </Row>
+      </Row> */}
     </div>
   )
 }
