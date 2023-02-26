@@ -2,7 +2,7 @@
 import { useContext } from 'react'
 
 // ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col, UncontrolledButtonDropdown } from 'reactstrap'
 
 // ** Context
 import { ThemeColors } from '@src/utility/context/ThemeColors'
@@ -24,6 +24,8 @@ import FPhc from '@src/views/ui-elements/cards/analytics/FPhc'
 import RepUsers from '../../../ui-elements/cards/analytics/RepUsers'
 import RepNfr from '../../../ui-elements/cards/analytics/RepNfr'
 import RepDv from '../../../ui-elements/cards/analytics/RepDv'
+import RepDropdown from '../../../ui-elements/cards/analytics/RepDropdown'
+import tavg from './tavg'
 
 // ** Styles
 import '@styles/react/libs/charts/apex-charts.scss'
@@ -34,10 +36,15 @@ const RepDashboard = () => {
   const { colors } = useContext(ThemeColors)
 
   // ** vars
-  const trackBgColor = '#e9ecef'
 
   return (
     <div id='dashboard-ecommerce'>
+      <Row className='match-height'>
+        <Col lg='12' md='3' >
+          <RepDropdown/>
+        </Col>
+        
+      </Row>
       <Row className='match-height'>
         <Col lg='4' md='12'>
           <Row className='match-height'>
