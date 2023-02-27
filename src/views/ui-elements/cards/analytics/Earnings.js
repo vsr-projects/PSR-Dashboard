@@ -90,7 +90,8 @@ const Earnings = ({ success }) => {
   }
 
   return (
-    <Card className='earnings-card'>
+    <>
+    {/* <Card className='earnings-card'>
       <CardBody>
         <Row>
           <Col xs='6'>
@@ -107,7 +108,8 @@ const Earnings = ({ success }) => {
           </Col>
         </Row>
       </CardBody>
-    </Card>
+    </Card> */}
+    </>
   )
 }
 

@@ -39,7 +39,7 @@ const RepDv = ({ direction, warning }) => {
 
   function create_arrays(csv)
   { 
-    console.log(csv)
+    // console.log(csv)
     let label = [];
     let v1 = [];
     let v2 = [];
@@ -62,8 +62,7 @@ const RepDv = ({ direction, warning }) => {
       v4:v4,
       v5:v5
     }
-    console.log(obj
-      );
+    // console.log(obj);
     return obj;
   }
 

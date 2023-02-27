@@ -51,8 +51,7 @@ const RepUsers = ({ direction, warning }) => {
       label:label,
       values:value
     }
-    console.log(obj
-      );
+    // console.log(obj);
     return obj;
   }
 

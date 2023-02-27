@@ -10,13 +10,15 @@ const TinyChartStats = props => {
   const { title, stats, options, series, type, height } = props
 
   return (
-    <Card className='card-tiny-line-stats'>
-      <CardBody className='pb-50'>
-        <h6>{title}</h6>
-        <h2 className='fw-bolder mb-1'>{stats}</h2>
-        <Chart options={options} series={series} type={type} height={height} />
-      </CardBody>
-    </Card>
+    <>
+      <Card className='card-tiny-line-stats'>
+        <CardBody className='pb-50'>
+          <h6>{title}</h6>
+          <h2 className='fw-bolder mb-1'>{stats}</h2>
+          <Chart options={options} series={series} type={type} height={height} />
+        </CardBody>
+      </Card>
+    </>
   )
 }
 

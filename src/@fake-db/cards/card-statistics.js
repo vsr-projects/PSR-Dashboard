@@ -95,6 +95,7 @@ mock.onGet('/card/card-statistics/orders-bar-chart').reply(() => [200, data.orde
 
 mock.onGet('/card/card-statistics/profit-line-chart').reply(() => [200, data.profit_line_chart])
 
+
 mock.onGet('/card/card-statistics/subscribers').reply(() => [200, data.subscribers_gained])
 
 mock.onGet('/card/card-statistics/revenue').reply(() => [200, data.revenueGenerated])

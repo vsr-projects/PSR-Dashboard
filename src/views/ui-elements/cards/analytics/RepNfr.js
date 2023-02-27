@@ -34,7 +34,7 @@ const RepNfr = ({ direction, warning }) => {
 
   function create_arrays(csv)
   { 
-    console.log(csv)
+    // console.log(csv)
     let label = [];
     let value = [];
     let nfr = [];
@@ -48,7 +48,7 @@ const RepNfr = ({ direction, warning }) => {
       value:value,
       nfr:nfr
     }
-    console.log(obj);
+    // console.log(obj);
     return obj;
   }
 
@@ -106,7 +106,7 @@ let  series= [
 
   // ** Chart Series
  
-  console.log(create_arrays(csv).nfr)
+  // console.log(create_arrays(csv).nfr)
   return (
     <Card >
       <CardHeader className='d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start'>
