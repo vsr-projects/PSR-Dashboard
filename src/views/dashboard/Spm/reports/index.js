@@ -24,7 +24,7 @@ import FPhc from '@src/views/ui-elements/cards/analytics/FPhc'
 import RepUsers from '../../../ui-elements/cards/analytics/RepUsers'
 import RepNfr from '../../../ui-elements/cards/analytics/RepNfr'
 import RepDv from '../../../ui-elements/cards/analytics/RepDv'
-import RepDropdown from '../../../ui-elements/cards/analytics/RepDropdown'
+import RepDropdownf from '../../../ui-elements/cards/analytics/RepDropdownf'
 import tavg from './tavg'
 
 // ** Styles
@@ -41,7 +41,7 @@ const RepDashboard = () => {
     <div id='dashboard-ecommerce'>
       <Row className='match-height'>
         <Col lg='12' md='3' >
-          <RepDropdown/>
+          <RepDropdownf/>
         </Col>
         
       </Row>

@@ -23,7 +23,7 @@ const RepDropdownapi = (props) => {
 
   useEffect(() => {
     if (selectedRelease) {
-      axios.get(`/api/releases/${selectedRelease}`).then((res) => {
+      axios.get(`http://127.0.0.1:5000/projects/stats/${selectedRelease}`).then((res) => {
         setChartData(res.data.chartData)
       })
     } else {

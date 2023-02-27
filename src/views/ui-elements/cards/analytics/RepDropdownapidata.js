@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     if (selectedRelease) {
-      axios.get(`http://127.0.0.1:5000/projects/stats/${selectedRelease}`)
+      axios.get(`http://127.0.0.1:5000/projects/stats`)
         .then(response => {
           setData(response.data)
         })
