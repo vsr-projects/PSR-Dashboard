@@ -29,74 +29,6 @@ const RepDropdown = props => {
     return () => setData(null)
   }, [])
 
-  const revenueOptions = {
-      chart: {
-        stacked: true,
-        type: 'bar',
-        toolbar: { show: false }
-      },
-      grid: {
-        padding: {
-          top: -20,
-          bottom: -10
-        },
-        yaxis: {
-          lines: { show: false }
-        }
-      },
-      xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-        labels: {
-          style: {
-            colors: '#b9b9c3',
-            fontSize: '0.86rem'
-          }
-        },
-        axisTicks: {
-          show: false
-        },
-        axisBorder: {
-          show: false
-        }
-      },
-      legend: {
-        show: false
-      },
-      dataLabels: {
-        enabled: false
-      },
-      colors: [props.primary, props.warning],
-      plotOptions: {
-        bar: {
-          columnWidth: '17%',
-          borderRadius: [4],
-          borderRadiusWhenStacked: 'all',
-          borderRadiusApplication: 'start'
-        },
-        distributed: true
-      },
-      yaxis: {
-        labels: {
-          style: {
-            colors: '#b9b9c3',
-            fontSize: '0.86rem'
-          }
-        }
-      }
-    },
-    revenueSeries = [
-      {
-        name: 'Earning',
-        data: [95, 177, 284, 256, 105, 63, 168, 218, 72]
-      },
-      {
-        name: 'Expense',
-        data: [-145, -80, -60, -180, -100, -60, -85, -75, -100]
-      }
-    ]
-
-  
-
   return data !== null ? (
     <Card className="card-revenue-budget">
       <Row className="mx-0">
@@ -133,6 +65,85 @@ const RepDropdown = props => {
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledButtonDropdown>
+            
+          </div>
+          <div>
+            <Button color='primary' outline onClick={() => setScrollInnerModal(!scrollInnerModal)}>
+              Scrolling Content Inside Modal
+            </Button>
+            <Modal scrollable isOpen={scrollInnerModal} toggle={() => setScrollInnerModal(!scrollInnerModal)}>
+              <ModalHeader toggle={() => setScrollInnerModal(!scrollInnerModal)}>Modal Title</ModalHeader>
+              <ModalBody>
+                <p>
+                  Biscuit powder jelly beans. Lollipop candy canes croissant icing chocolate cake. Cake fruitcake powder
+                  pudding pastry.
+                </p>
+                <p>
+                  Tootsie roll oat cake I love bear claw I love caramels caramels halvah chocolate bar. Cotton candy gummi
+                  bears pudding pie apple pie cookie. Cheesecake jujubes lemon drops danish dessert I love caramels powder.
+                </p>
+                <p>
+                  Chocolate cake icing tiramisu liquorice toffee donut sweet roll cake. Cupcake dessert icing dragée
+                  dessert. Liquorice jujubes cake tart pie donut. Cotton candy candy canes lollipop liquorice chocolate
+                  marzipan muffin pie liquorice.
+                </p>
+                <p>
+                  Powder cookie jelly beans sugar plum ice cream. Candy canes I love powder sugar plum tiramisu. Liquorice
+                  pudding chocolate cake cupcake topping biscuit. Lemon drops apple pie sesame snaps tootsie roll carrot
+                  cake soufflé halvah. Biscuit powder jelly beans. Lollipop candy canes croissant icing chocolate cake. Cake
+                  fruitcake powder pudding pastry.
+                </p>
+                <p>
+                  Tootsie roll oat cake I love bear claw I love caramels caramels halvah chocolate bar. Cotton candy gummi
+                  bears pudding pie apple pie cookie. Cheesecake jujubes lemon drops danish dessert I love caramels powder.
+                </p>
+                <p>
+                  Chocolate cake icing tiramisu liquorice toffee donut sweet roll cake. Cupcake dessert icing dragée
+                  dessert. Liquorice jujubes cake tart pie donut. Cotton candy candy canes lollipop liquorice chocolate
+                  marzipan muffin pie liquorice.
+                </p>
+                <p>
+                  Powder cookie jelly beans sugar plum ice cream. Candy canes I love powder sugar plum tiramisu. Liquorice
+                  pudding chocolate cake cupcake topping biscuit. Lemon drops apple pie sesame snaps tootsie roll carrot
+                  cake soufflé halvah. Biscuit powder jelly beans. Lollipop candy canes croissant icing chocolate cake. Cake
+                  fruitcake powder pudding pastry.
+                </p>
+                <p>
+                  Tootsie roll oat cake I love bear claw I love caramels caramels halvah chocolate bar. Cotton candy gummi
+                  bears pudding pie apple pie cookie. Cheesecake jujubes lemon drops danish dessert I love caramels powder.
+                </p>
+                <p>
+                  Chocolate cake icing tiramisu liquorice toffee donut sweet roll cake. Cupcake dessert icing dragée
+                  dessert. Liquorice jujubes cake tart pie donut. Cotton candy candy canes lollipop liquorice chocolate
+                  marzipan muffin pie liquorice.
+                </p>
+                <p>
+                  Powder cookie jelly beans sugar plum ice cream. Candy canes I love powder sugar plum tiramisu. Liquorice
+                  pudding chocolate cake cupcake topping biscuit. Lemon drops apple pie sesame snaps tootsie roll carrot
+                  cake soufflé halvah. Biscuit powder jelly beans. Lollipop candy canes croissant icing chocolate cake. Cake
+                  fruitcake powder pudding pastry.
+                </p>
+                <p>
+                  Tootsie roll oat cake I love bear claw I love caramels caramels halvah chocolate bar. Cotton candy gummi
+                  bears pudding pie apple pie cookie. Cheesecake jujubes lemon drops danish dessert I love caramels powder.
+                </p>
+                <p>
+                  Chocolate cake icing tiramisu liquorice toffee donut sweet roll cake. Cupcake dessert icing dragée
+                  dessert. Liquorice jujubes cake tart pie donut. Cotton candy candy canes lollipop liquorice chocolate
+                  marzipan muffin pie liquorice.
+                </p>
+                <p>
+                  Powder cookie jelly beans sugar plum ice cream. Candy canes I love powder sugar plum tiramisu. Liquorice
+                  pudding chocolate cake cupcake topping biscuit. Lemon drops apple pie sesame snaps tootsie roll carrot
+                  cake soufflé halvah.
+                </p>
+              </ModalBody>
+              <ModalFooter>
+                <Button color='primary' onClick={() => setScrollInnerModal(!scrollInnerModal)}>
+                  Accept
+                </Button>
+              </ModalFooter>
+            </Modal>
           </div>
           <Col lg="4" md="12">
             <tavg></tavg>

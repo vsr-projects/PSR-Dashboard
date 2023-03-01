@@ -1,8 +1,8 @@
 // ** React Imports
-import { useContext } from 'react'
+import { Fragment, useContext } from 'react'
 
 // ** Reactstrap Imports
-import { Row, Col, UncontrolledButtonDropdown } from 'reactstrap'
+import { Row, Col, UncontrolledButtonDropdown, CardText } from 'reactstrap'
 
 // ** Context
 import { ThemeColors } from '@src/utility/context/ThemeColors'
@@ -26,14 +26,23 @@ import RepNfr from '../../../ui-elements/cards/analytics/RepNfr'
 import RepDv from '../../../ui-elements/cards/analytics/RepDv'
 import RepDropdownf from '../../../ui-elements/cards/analytics/RepDropdownf'
 import tavg from './tavg'
+import ModalFormAndScroll from '../../../components/modal/ModalFormAndScroll'
 
 // ** Styles
 import '@styles/react/libs/charts/apex-charts.scss'
 import '@styles/base/pages/dashboard-ecommerce.scss'
+import Card from '@components/card-snippet'
+import BreadCrumbs from '@components/breadcrumbs'
+
+import { modalBasic, modalTheme, modalSizes, modalEvents, modalForm, modalUnmount } from '../../../components/modal/ModalSourceCode'
+
 
 const RepDashboard = () => {
   // ** Context
   const { colors } = useContext(ThemeColors)
+  // useEffect(() => {
+  //   Prism.highlightAll()
+  // }, [])
 
   // ** vars
 
@@ -42,6 +51,7 @@ const RepDashboard = () => {
       <Row className='match-height'>
         <Col lg='12' md='3' >
           <RepDropdownf/>
+          
         </Col>
         
       </Row>

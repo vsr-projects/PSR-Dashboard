@@ -1,6 +1,7 @@
 // ** React Imports
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { readFileSync } from 'fs'
 import { ExcelRenderer } from 'react-excel-renderer'
 
 // ** Third Party Components
@@ -61,7 +62,7 @@ const handleDownload = () => {
 
 
 
-const RepDropdownf = props => {
+const RepDropdown = props => {
   // ** State
   const [data, setData] = useState(null)
   const [scrollModal, setScrollModal] = useState(false)
@@ -121,6 +122,7 @@ const RepDropdownf = props => {
                 <ModalBody>
                   <p>
                     Results for the Current Release
+                    {handleDownload()}
                   </p>
                   
                   
@@ -143,4 +145,4 @@ const RepDropdownf = props => {
   ) : null
 }
 
-export default RepDropdownf
+export default RepDropdown
