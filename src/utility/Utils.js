@@ -13,7 +13,7 @@ export const htmlToString = html => html.replace(/<\/?[^>]+(>|$)/g, '')
 const isToday = date => {
   const today = new Date()
   return (
-    /* eslint-disable operator-linebreak */
+     
     date.getDate() === today.getDate() &&
     date.getMonth() === today.getMonth() &&
     date.getFullYear() === today.getFullYear()

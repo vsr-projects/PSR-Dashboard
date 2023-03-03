@@ -7,8 +7,10 @@ import NodeGlobalsPolyfillPlugin from '@esbuild-plugins/node-globals-polyfill'
 import dsv from '@rollup/plugin-dsv'
 export default () => {
   return defineConfig({
-    plugins: [react(),
-      dsv()],
+    plugins: [
+react(),
+      dsv()
+],
     define: {
       global: 'globalThis'
     },

@@ -68,8 +68,7 @@ const Mails = props => {
   const handleSelectAll = e => {
     dispatch(selectAllMail(e.target.checked))
   }
-
-  /*eslint-disable */
+   
 
   // ** Handles Folder Update
   const handleFolderUpdate = (e, folder, ids = selectedMails) => {

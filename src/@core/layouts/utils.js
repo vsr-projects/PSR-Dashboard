@@ -1,4 +1,4 @@
-/* eslint-disable implicit-arrow-linebreak */
+ 
 // ** React Imports
 import { useContext } from 'react'
 import { AbilityContext } from '@src/utility/context/Can'

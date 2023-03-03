@@ -33,20 +33,18 @@ import { YAxis } from 'recharts'
 const RepDv = ({ direction, warning }) => {
 
 
-
   //State to store the values
 
 
-  function create_arrays(csv)
-  { 
+  function create_arrays(csv) { 
     console.log(csv)
-    let label = [];
-    let v1 = [];
-    let v2 = [];
-    let v3 = [];
-    let v4 = [];
-    let v5 = [];
-    csv.map(element=>{
+    const label = []
+    const v1 = []
+    const v2 = []
+    const v3 = []
+    const v4 = []
+    const v5 = []
+    csv.map(element => {
       label.push(element["\ufeffRelease"])
       v1.push(element["data_volume_table1"])
       v2.push(element["data_volume_table2"])
@@ -54,19 +52,18 @@ const RepDv = ({ direction, warning }) => {
       v4.push(element["data_volume_table4"])
       v5.push(element["data_volume_table5"])
     })
-    let obj={
-      label:label,
-      v1:v1,
-      v2:v2,
-      v3:v3,
-      v4:v4,
-      v5:v5
+    const obj = {
+      label,
+      v1,
+      v2,
+      v3,
+      v4,
+      v5
     }
     console.log(obj
-      );
-    return obj;
+      )
+    return obj
   }
-
 
 
   // ** Chart Options
@@ -78,11 +75,11 @@ const RepDv = ({ direction, warning }) => {
   },
   plotOptions: {
     bar: {
-      horizontal: false,
+      horizontal: false
     }
   },
   dataLabels: {
-    enabled: false,
+    enabled: false
   },
   //   offsetX: -6,
   //   style: {
@@ -100,18 +97,18 @@ const RepDv = ({ direction, warning }) => {
     intersect: false
   },
   xaxis: {
-    categories:create_arrays(csv).label,
+    categories:create_arrays(csv).label
   },
   yaxis:{
     title: {
       text: "Data Volume",
       style: {
-        color: '#008FFB',
+        color: '#008FFB'
       }
-    },
-  },
-  };
-let  series= [
+    }
+  }
+  }
+const  series = [
   {
     name:"data_volume_table1",
     data:create_arrays(csv).v1
@@ -137,7 +134,6 @@ let  series= [
 ]
 
   // ** Chart Series
-
  
 
   return (

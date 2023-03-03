@@ -31,31 +31,29 @@ import { Card, CardHeader, CardTitle, CardBody, CardSubtitle, Badge } from 'reac
 
 const RepUsers = ({ direction, warning }) => {
 
-  const [parsedData, setParsedData] = useState([]);
+  const [parsedData, setParsedData] = useState([])
 
   //State to store table Column name
-  const [lable, setLable] = useState([]);
+  const [lable, setLable] = useState([])
 
   //State to store the values
-  const [values, setValues] = useState([]);
+  const [values, setValues] = useState([])
 
-  function create_arrays(csv)
-  { 
-    let label = [];
-    let value = [];
-    csv.map(element=>{
+  function create_arrays(csv) { 
+    const label = []
+    const value = []
+    csv.map(element => {
       label.push(element["\ufeffRelease"])
       value.push(element["no_of_user"])
     })
-    let obj={
-      label:label,
+    const obj = {
+      label,
       values:value
     }
     console.log(obj
-      );
-    return obj;
+      )
+    return obj
   }
-
 
 
   // ** Chart Options
@@ -99,9 +97,9 @@ const RepUsers = ({ direction, warning }) => {
       title: {
         text: "Users",
         style: {
-          color: '#008FFB',
+          color: '#008FFB'
         }
-      },
+      }
     }
    
   }

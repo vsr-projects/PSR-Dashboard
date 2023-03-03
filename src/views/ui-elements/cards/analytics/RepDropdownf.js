@@ -1,9 +1,11 @@
 // ** React Imports
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Table } from 'reactstrap'
 
 // ** Third Party Components
 import tavg from '../../../dashboard/Spm/reports/tavg'
+import RepDropdowntable1 from './RepDropdowntable1'
 // ** Reactstrap Imports
 
 import {
@@ -31,7 +33,7 @@ const RepDropdownf = props => {
   const [scrollInnerModal, setScrollInnerModal] = useState(false)
   
 
-  return(
+  return (
     <Card className="card-revenue-budget">
       <Row className="mx-0">
         <Col className="revenue-report-wrapper" md="12" xs="12">
@@ -67,7 +69,7 @@ const RepDropdownf = props => {
               </DropdownMenu>
             </UncontrolledButtonDropdown>
           </div>
-          <Col lg="2" md="12">
+          <Col lg="4" md="12">
             <div>
               <Button color='success' outline onClick={() => setScrollInnerModal(!scrollInnerModal)}>
                 Release Results
@@ -89,6 +91,25 @@ const RepDropdownf = props => {
                 </ModalFooter>
               </Modal>
             </div>
+            <div style={{paddingTop: "20px", paddingLeft:"10px", display: "flex"}}>
+              <CardTitle className="mb-50 pt-10 mb-sm-0" style={{textAlign : "center", color : 'primary'}}>
+                Average Stats
+              <RepDropdowntable1/>
+              </CardTitle>
+              <CardTitle className="mb-50 pt-10 mb-sm-0" style={{paddingLeft:"10px", textAlign : "center"}}>
+                Max Transactions
+                <RepDropdowntable1/>
+              </CardTitle>
+              <CardTitle className="mb-50 pt-10 mb-sm-0" style={{paddingLeft:"10px", textAlign : "center"}}>
+                Observations & Issues
+                <RepDropdowntable1/>
+              </CardTitle>
+              
+            </div>
+            <div style={{paddingTop: "20px"}}>
+              
+              
+            </div>
             
           </Col>
           <Col lg="4" md="12">
@@ -97,7 +118,8 @@ const RepDropdownf = props => {
         </Col>
       </Row>
     </Card>
-  ) ;
+  ) 
 }
+
 
 export default RepDropdownf

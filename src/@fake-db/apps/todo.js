@@ -287,7 +287,7 @@ const data = {
 // GET: Return Tasks
 // ------------------------------------------------
 mock.onGet('/apps/todo/tasks').reply(config => {
-  // eslint-disable-next-line object-curly-newline
+   
   const { q = '', filter, tag, sortBy: sortByParam = 'latest' } = config.params
   /* eslint-enable */
   // ------------------------------------------------
@@ -340,7 +340,7 @@ mock.onGet('/apps/todo/tasks').reply(config => {
     )
   }
 
-  /* eslint-disable */
+   
   const filteredData = data.tasks.filter(task => {
     if (filter || tag) {
       return (

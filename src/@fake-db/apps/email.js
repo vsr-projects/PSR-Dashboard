@@ -777,7 +777,7 @@ mock.onGet('/apps/email/emails').reply(config => {
 
   const filteredData = data.emails.filter(
     email =>
-      /* eslint-disable operator-linebreak, implicit-arrow-linebreak */
+      /* eslint-disable implicit-arrow-linebreak */
       (email.from.name.toLowerCase().includes(queryLowered) || email.subject.toLowerCase().includes(queryLowered)) &&
       isInFolder(email) &&
       (label ? email.labels.includes(label) : true)

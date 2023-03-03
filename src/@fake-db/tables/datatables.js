@@ -1422,14 +1422,14 @@ mock.onGet('/api/datatables/initial-data').reply(() => {
 })
 
 mock.onGet('/api/datatables/data').reply(config => {
-  // eslint-disable-next-line object-curly-newline
+   
   const { q = '', perPage = 10, page = 1 } = config
   /* eslint-enable */
 
   const queryLowered = q.toLowerCase()
   const filteredData = data.filter(
     item =>
-      /* eslint-disable operator-linebreak, implicit-arrow-linebreak */
+      /* eslint-disable implicit-arrow-linebreak */
       item.full_name.toLowerCase().includes(queryLowered) ||
       item.post.toLowerCase().includes(queryLowered) ||
       item.email.toLowerCase().includes(queryLowered) ||

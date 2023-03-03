@@ -19,7 +19,7 @@ export const sortCompare = key => (a, b) => {
 export const getRandomInt = (min, max) => {
   if (min > max) {
     const temp = max
-    /* eslint-disable no-param-reassign */
+     
     max = min
     min = temp
     /* eslint-enable */

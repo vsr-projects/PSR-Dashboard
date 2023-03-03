@@ -398,7 +398,7 @@ const data = {
 // GET: Return products
 // ------------------------------------------------
 mock.onGet('/apps/ecommerce/products').reply(config => {
-  // eslint-disable-next-line object-curly-newline
+   
   const { q = '', sortBy = 'featured', perPage = 9, page = 1 } = config.params
 
   const queryLowered = q.toLowerCase()
@@ -424,7 +424,7 @@ mock.onGet('/apps/ecommerce/products').reply(config => {
   const paginatedData = JSON.parse(JSON.stringify(paginateArray(sortedData, perPage, page)))
 
   paginatedData.forEach(product => {
-    /* eslint-disable no-param-reassign */
+     
     product.isInWishlist = data.userWishlist.findIndex(p => p.productId === product.id) > -1
     product.isInCart = data.userCart.findIndex(p => p.productId === product.id) > -1
     /* eslint-enable */

@@ -924,7 +924,7 @@ const data = {
 // GET: Return Invoice List
 // ------------------------------------------------
 mock.onGet('/apps/invoice/invoices').reply(config => {
-  // eslint-disable-next-line object-curly-newline
+   
   const { q = '', perPage = 10, page = 1, status = null, sort, sortColumn } = config
   /* eslint-enable */
 
@@ -947,7 +947,7 @@ mock.onGet('/apps/invoice/invoices').reply(config => {
     if (queryLowered.length && String('paid').includes(queryLowered) && invoice.balance === 0) {
       return invoice.balance === 0
     } else {
-      /* eslint-disable operator-linebreak, implicit-arrow-linebreak */
+       
       return (
         (invoice.client.companyEmail.toLowerCase().includes(queryLowered) ||
           invoice.client.name.toLowerCase().includes(queryLowered) ||

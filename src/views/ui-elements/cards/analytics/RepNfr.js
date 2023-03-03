@@ -32,26 +32,24 @@ import { release } from 'process'
 const RepNfr = ({ direction, warning }) => {
 
 
-  function create_arrays(csv)
-  { 
+  function create_arrays(csv) { 
     console.log(csv)
-    let label = [];
-    let value = [];
-    let nfr = [];
-    csv.map(element=>{
+    const label = []
+    const value = []
+    const nfr = []
+    csv.map(element => {
       label.push(element["\ufeffRelease"])
       value.push(element["transactions_breaching_nfr"])
       nfr.push(element["total_no_of_transactions"])
     })
-    let obj={
-      label:label,
-      value:value,
-      nfr:nfr
+    const obj = {
+      label,
+      value,
+      nfr
     }
-    console.log(obj);
-    return obj;
+    console.log(obj)
+    return obj
   }
-
 
 
   // ** Chart Options
@@ -65,12 +63,12 @@ const RepNfr = ({ direction, warning }) => {
     bar: {
       horizontal: false,
       dataLabels: {
-        position: 'top',
-      },
+        position: 'top'
+      }
     }
   },
   dataLabels: {
-    enabled: false,
+    enabled: false
   },
   //   offsetX: -6,
   //   style: {
@@ -88,10 +86,10 @@ const RepNfr = ({ direction, warning }) => {
     intersect: false
   },
   xaxis: {
-    categories:create_arrays(csv).label,
-  },
-  };
-let  series= [
+    categories:create_arrays(csv).label
+  }
+  }
+const  series = [
   {
     name:"Total no of transactions",
     data:create_arrays(csv).nfr
@@ -100,7 +98,7 @@ let  series= [
   name:"Transactions breaching nfr",
   data:create_arrays(csv).value
     
-  },
+  }
  
 ]
 

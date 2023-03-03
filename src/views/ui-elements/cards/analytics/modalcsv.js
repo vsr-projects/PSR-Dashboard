@@ -67,7 +67,7 @@ const RepDropdownf = props => {
   const [cols, setCols] = useState([])
   
 
-  return(
+  return (
     <Card className="card-revenue-budget">
       <Row className="mx-0">
         <Col className="revenue-report-wrapper" md="12" xs="12">
@@ -132,7 +132,7 @@ const RepDropdownf = props => {
         </Col>
       </Row>
     </Card>
-  ) ;
+  ) 
 }
 
 export default RepDropdownf

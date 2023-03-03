@@ -80,7 +80,7 @@ const Calendar = props => {
     navLinks: true,
 
     eventClassNames({ event: calendarEvent }) {
-      // eslint-disable-next-line no-underscore-dangle
+       
       const colorName = calendarsColor[calendarEvent._def.extendedProps.calendar]
 
       return [
@@ -97,7 +97,7 @@ const Calendar = props => {
       // ! Always grab all fields rendered by form (even if it get `undefined`) otherwise due to Vue3/Composition API you might get: "object is not extensible"
       // event.value = grabEventDataFromEventApi(clickedEvent)
 
-      // eslint-disable-next-line no-use-before-define
+       
       // isAddNewEventSidebarActive.value = true
     },
 

@@ -12,7 +12,7 @@ export default [
         title: 'Analytics',
         icon: <Activity />,
         navLink: '/dashboard/analytics'
-      },
+      }
       
     ]
   }
