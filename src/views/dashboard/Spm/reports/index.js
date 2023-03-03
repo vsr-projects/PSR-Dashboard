@@ -8,7 +8,6 @@ import { Row, Col, UncontrolledButtonDropdown, CardText } from 'reactstrap'
 import { ThemeColors } from '@src/utility/context/ThemeColors'
 
 // ** Demo Components
-import CompanyTable from './CompanyTable'
 import Earnings from '@src/views/ui-elements/cards/analytics/Earnings'
 import CardMedal from '@src/views/ui-elements/cards/advance/CardMedal'
 import CardMeetup from '@src/views/ui-elements/cards/advance/CardMeetup'
@@ -24,7 +23,7 @@ import FPhc from '@src/views/ui-elements/cards/analytics/FPhc'
 import RepUsers from '../../../ui-elements/cards/analytics/RepUsers'
 import RepNfr from '../../../ui-elements/cards/analytics/RepNfr'
 import RepDv from '../../../ui-elements/cards/analytics/RepDv'
-import RepDropdownf from '../../../ui-elements/cards/analytics/RepDropdownf'
+import RepDropdownf from './RepDropdownf'
 import tavg from './tavg'
 import ModalFormAndScroll from '../../../components/modal/ModalFormAndScroll'
 

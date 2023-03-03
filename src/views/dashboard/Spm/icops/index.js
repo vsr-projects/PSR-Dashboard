@@ -23,7 +23,7 @@ import FPhc from '@src/views/ui-elements/cards/analytics/FPhc'
 import RepUsers from '../../../ui-elements/cards/analytics/RepUsers'
 import RepNfr from '../../../ui-elements/cards/analytics/RepNfr'
 import RepDv from '../../../ui-elements/cards/analytics/RepDv'
-import RepDropdownf from '../../../ui-elements/cards/analytics/RepDropdownf'
+import RepDropdownf from './opsDropdownf'
 import tavg from './tavg'
 import ModalFormAndScroll from '../../../components/modal/ModalFormAndScroll'
 
@@ -74,21 +74,9 @@ const icopsDashboard = () => {
           <RepDv primary={colors.primary.main} warning={colors.warning.main} />
         </Col>
       </Row>
-      {/* <Row className='match-height'>
-        <Col lg='4' md='6' xs='12'>
-          <CardTransactions />
-        </Col>
-        <Col lg='4' md='6' xs='12'>
-          <GoalOverview success={colors.success.main} />
-        </Col>
-        <Col lg='4' md='6' xs='12'>
-          <CardBrowserStates colors={colors} trackBgColor={trackBgColor} />
-        </Col>
-        
-        
-      </Row> */}
     </div>
   )
 }
+
 
 export default icopsDashboard

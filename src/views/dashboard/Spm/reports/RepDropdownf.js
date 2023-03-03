@@ -4,8 +4,10 @@ import axios from 'axios'
 import { Table } from 'reactstrap'
 
 // ** Third Party Components
-import tavg from '../../../dashboard/Spm/reports/tavg'
+import tavg from './tavg'
 import RepDropdowntable1 from './RepDropdowntable1'
+import RepDropdowntable2 from './RepDropdowntable2'
+import RepDropdowntable3 from './RepDropdowntable3'
 // ** Reactstrap Imports
 
 import {
@@ -98,11 +100,11 @@ const RepDropdownf = props => {
               </CardTitle>
               <CardTitle className="mb-50 pt-10 mb-sm-0" style={{paddingLeft:"10px", textAlign : "center"}}>
                 Max Transactions
-                <RepDropdowntable1/>
+                <RepDropdowntable2/>
               </CardTitle>
               <CardTitle className="mb-50 pt-10 mb-sm-0" style={{paddingLeft:"10px", textAlign : "center"}}>
                 Observations & Issues
-                <RepDropdowntable1/>
+                <RepDropdowntable3/>
               </CardTitle>
               
             </div>
