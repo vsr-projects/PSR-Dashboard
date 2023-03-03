@@ -1,7 +1,6 @@
 // ** React Imports
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { readFileSync } from 'fs'
 import { ExcelRenderer } from 'react-excel-renderer'
 
 // ** Third Party Components
@@ -60,23 +59,15 @@ const handleDownload = () => {
   return table
 }
 
-
-
-const RepDropdown = props => {
+const RepDropdownf = props => {
   // ** State
-  const [data, setData] = useState(null)
   const [scrollModal, setScrollModal] = useState(false)
   const [scrollInnerModal, setScrollInnerModal] = useState(false)
-  const [rows, setRows] = useState([]);
-  const [cols, setCols] = useState([]);
+  const [rows, setRows] = useState([])
+  const [cols, setCols] = useState([])
   
 
-  useEffect(() => {
-    axios.get('/card/card-analytics/revenue-report').then(res => setData(res.data))
-    return () => setData(null)
-  }, [])
-
-  return data !== null ? (
+  return(
     <Card className="card-revenue-budget">
       <Row className="mx-0">
         <Col className="revenue-report-wrapper" md="12" xs="12">
@@ -122,9 +113,8 @@ const RepDropdown = props => {
                 <ModalBody>
                   <p>
                     Results for the Current Release
-                    {handleDownload()}
                   </p>
-                  
+                  {/* {handleDownload()} */}
                   
                 </ModalBody>
                 <ModalFooter>
@@ -142,7 +132,7 @@ const RepDropdown = props => {
         </Col>
       </Row>
     </Card>
-  ) : null
+  ) ;
 }
 
-export default RepDropdown
+export default RepDropdownf

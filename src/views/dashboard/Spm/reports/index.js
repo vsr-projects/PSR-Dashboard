@@ -34,8 +34,6 @@ import '@styles/base/pages/dashboard-ecommerce.scss'
 import Card from '@components/card-snippet'
 import BreadCrumbs from '@components/breadcrumbs'
 
-import { modalBasic, modalTheme, modalSizes, modalEvents, modalForm, modalUnmount } from '../../../components/modal/ModalSourceCode'
-
 
 const RepDashboard = () => {
   // ** Context
@@ -56,20 +54,8 @@ const RepDashboard = () => {
         
       </Row>
       <Row className='match-height'>
-        <Col lg='4' md='12'>
-          <Row className='match-height'>
-            <Col lg='6' md='3' xs='6'>
-              <OrdersBarChart warning={colors.warning.main} />
-            </Col>
-            <Col lg='6' md='3' xs='6'>
-              <ProfitLineChart info={colors.info.main} />
-            </Col>
-            <Col lg='12' md='6' xs='12'>
-              <Earnings success={colors.success.main} />
-            </Col>
-          </Row>
-        </Col>
-        <Col lg='8' md='12'>
+        
+        <Col lg='12' md='12'>
           <FPhc primary={colors.primary.main} warning={colors.warning.main} />
         </Col>
       </Row>

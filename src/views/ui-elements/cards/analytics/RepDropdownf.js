@@ -1,13 +1,11 @@
 // ** React Imports
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { ExcelRenderer } from 'react-excel-renderer'
 
 // ** Third Party Components
-import Prism from 'prismjs'
-import Chart from 'react-apexcharts'
 import tavg from '../../../dashboard/Spm/reports/tavg'
 // ** Reactstrap Imports
+
 import {
   Row,
   Col,
@@ -27,55 +25,13 @@ import {
   Input
 } from 'reactstrap'
 
-const handleDownload = () => {
-  // Read the CSV file using react-excel-renderer
-  ExcelRenderer('../../../ui-elements/cards/analytics/FI_R10_dashboard_result.xlsx', (err, resp) => {
-    if (err) {
-      console.log(err)
-    } else {
-      setRows(resp.rows)
-      setCols(resp.cols)
-    }
-  })
-
-  // Display the CSV data in the modal
-  const table = (
-    <table>
-      <thead>
-        <tr>
-          {cols.map(col => <th key={col}>{col}</th>)}
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row, index) => (
-          <tr key={index}>
-            {row.map((cell, index) => <td key={index}>{cell}</td>)}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  )
-
-  return table
-}
-
-
-
 const RepDropdownf = props => {
   // ** State
-  const [data, setData] = useState(null)
   const [scrollModal, setScrollModal] = useState(false)
   const [scrollInnerModal, setScrollInnerModal] = useState(false)
-  const [rows, setRows] = useState([]);
-  const [cols, setCols] = useState([]);
   
 
-  useEffect(() => {
-    axios.get('/card/card-analytics/revenue-report').then(res => setData(res.data))
-    return () => setData(null)
-  }, [])
-
-  return data !== null ? (
+  return(
     <Card className="card-revenue-budget">
       <Row className="mx-0">
         <Col className="revenue-report-wrapper" md="12" xs="12">
@@ -122,7 +78,8 @@ const RepDropdownf = props => {
                   <p>
                     Results for the Current Release
                   </p>
-                  
+                  <iframe width="100%" height="1000px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3koXDpk_fkYFgGi4qhkyeZZcr9u_Z5G2vk0SDcai_Lfpit8XR3jRaSOQM5XLKXoN87s_TajfZKKXi/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+                  {/* {handleDownload()} */}
                   
                 </ModalBody>
                 <ModalFooter>
@@ -140,7 +97,7 @@ const RepDropdownf = props => {
         </Col>
       </Row>
     </Card>
-  ) : null
+  ) ;
 }
 
 export default RepDropdownf

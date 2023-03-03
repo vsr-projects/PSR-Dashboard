@@ -1,8 +1,8 @@
 // ** React Imports
-import { useContext } from 'react'
+import { Fragment, useContext } from 'react'
 
 // ** Reactstrap Imports
-import { Row, Col } from 'reactstrap'
+import { Row, Col, UncontrolledButtonDropdown, CardText } from 'reactstrap'
 
 // ** Context
 import { ThemeColors } from '@src/utility/context/ThemeColors'
@@ -18,47 +18,63 @@ import OrdersBarChart from '@src/views/ui-elements/cards/statistics/OrdersBarCha
 import CardTransactions from '@src/views/ui-elements/cards/advance/CardTransactions'
 import ProfitLineChart from '@src/views/ui-elements/cards/statistics/ProfitLineChart'
 import CardBrowserStates from '@src/views/ui-elements/cards/advance/CardBrowserState'
+import RepRds from '@src/views/ui-elements/cards/analytics/RepRds'
+import FPhc from '@src/views/ui-elements/cards/analytics/FPhc'
+import RepUsers from '../../../ui-elements/cards/analytics/RepUsers'
+import RepNfr from '../../../ui-elements/cards/analytics/RepNfr'
+import RepDv from '../../../ui-elements/cards/analytics/RepDv'
+import RepDropdownf from '../../../ui-elements/cards/analytics/RepDropdownf'
+import tavg from './tavg'
+import ModalFormAndScroll from '../../../components/modal/ModalFormAndScroll'
 
 // ** Styles
 import '@styles/react/libs/charts/apex-charts.scss'
 import '@styles/base/pages/dashboard-ecommerce.scss'
+import Card from '@components/card-snippet'
+import BreadCrumbs from '@components/breadcrumbs'
+
 
 const icopsDashboard = () => {
   // ** Context
   const { colors } = useContext(ThemeColors)
+  // useEffect(() => {
+  //   Prism.highlightAll()
+  // }, [])
 
   // ** vars
-  const trackBgColor = '#e9ecef'
 
   return (
     <div id='dashboard-ecommerce'>
       <Row className='match-height'>
-        <Col xl='4' md='6' xs='12'>
-          <CardMedal />
+        <Col lg='12' md='3' >
+          <RepDropdownf/>
+          
         </Col>
-        <Col xl='8' md='6' xs='12'>
-          <StatsCard cols={{ xl: '3', sm: '6' }} />
+        
+      </Row>
+      <Row className='match-height'>
+        
+        <Col lg='12' md='12'>
+          <FPhc primary={colors.primary.main} warning={colors.warning.main} />
         </Col>
       </Row>
       <Row className='match-height'>
-        <Col lg='4' md='12'>
-          <Row className='match-height'>
-            <Col lg='6' md='3' xs='6'>
-              <OrdersBarChart warning={colors.warning.main} />
-            </Col>
-            <Col lg='6' md='3' xs='6'>
-              <ProfitLineChart info={colors.info.main} />
-            </Col>
-            <Col lg='12' md='6' xs='12'>
-              <Earnings success={colors.success.main} />
-            </Col>
-          </Row>
+        <Col lg='6' md='10'>
+          <RepRds primary={colors.primary.main} warning={colors.warning.main} />
         </Col>
-        <Col lg='8' md='12'>
-          <RevenueReport primary={colors.primary.main} warning={colors.warning.main} />
+        <Col lg='6' md='10'>
+          <RepUsers primary={colors.primary.main} warning={colors.warning.main} />
         </Col>
       </Row>
       <Row className='match-height'>
+        <Col lg='6' md='10'>
+          <RepNfr primary={colors.primary.main} warning={colors.warning.main} />
+        </Col>
+        <Col lg='6' md='10'>
+          <RepDv primary={colors.primary.main} warning={colors.warning.main} />
+        </Col>
+      </Row>
+      {/* <Row className='match-height'>
         <Col lg='4' md='6' xs='12'>
           <CardTransactions />
         </Col>
@@ -70,7 +86,7 @@ const icopsDashboard = () => {
         </Col>
         
         
-      </Row>
+      </Row> */}
     </div>
   )
 }
