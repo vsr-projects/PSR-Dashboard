@@ -82,7 +82,7 @@ class Dash():
             print("Authentication failed: " + str(traceback.format_exc()))
     
     def PSRCost(self,start,end,granuarilty):
-        client = self._session.client('ce')
+        client = self._session.client('ce') #cost explorer service
         response = client.get_cost_and_usage(
             TimePeriod={
                 'Start': start,

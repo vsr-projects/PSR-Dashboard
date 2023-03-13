@@ -1,12 +1,7 @@
-import { useEffect, useState } from 'react'
 import { Table } from 'reactstrap'
 import axios from 'axios'
 
-const instance = axios.create({
-    baseURL: 'http://127.0.0.1:5000'
-  })
-  
-const RepDropdowntable1 = () => {
+const RepDropdowntable = () => {
     const [stats, setStats] = useState([])
   
     useEffect(() => {
@@ -51,5 +46,5 @@ const RepDropdowntable1 = () => {
     )
   }
   
-  export default RepDropdowntable1
+  export default RepDropdowntable
   

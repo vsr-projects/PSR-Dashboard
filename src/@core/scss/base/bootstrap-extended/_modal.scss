@@ -108,7 +108,6 @@
       padding-top: ($modal-title-line-height * $btn-close-width) + $modal-header-padding-y;
       overflow: auto;
       border-radius: 0;
-      height: 100%;
     }
 
     .modal-body {
@@ -163,6 +162,7 @@
 
 @media (max-width: 576px) {
   .modal {
+    
     &:not(.modal-slide-in) {
       .modal-dialog:not(.modal-fullscreen) {
         padding-right: 1rem;
@@ -181,6 +181,9 @@
   }
 }
 
+.modal {
+  --bs-modal-width: 80%;
+}
 // ------------------------------------------------
 // Modal Examples
 // ------------------------------------------------
