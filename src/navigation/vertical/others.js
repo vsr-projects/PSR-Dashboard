@@ -48,7 +48,7 @@ export default [
     icon: <Folder size={20} />,
     externalLink: true,
     newTab: true,
-    navLink: 'https://pixinvent.com/demo/vuexy-react-admin-dashboard-template/documentation'
+    navLink: 'https://zs.com/demo/vuexy-react-admin-dashboard-template/documentation'
   },
   {
     id: 'raiseSupport',

@@ -15,10 +15,10 @@ react(),
       global: 'globalThis'
     },
     server: {
-      port: 3000,
-      proxy: 'https://pixinvent.com/',
+      port: 5000,
+      proxy: 'https://zs.com/',
       cors: {
-        origin: ['https://pixinvent.com/', 'http://localhost:3000'],
+        origin: ['https://zs.com/', 'http://localhost:3000'],
         methods: ['GET', 'PATCH', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
         allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
       }

@@ -1,0 +1,108 @@
+﻿Transaction,user_path,Transaction_Name_With_User_Path,Average Response Time (sec),90th Percentile Response Time (sec)
+selectidentity,_Plan Tab,selectidentity_Plan Tab,7.77,10
+navigate_to_plan_tab,_Plan Tab,navigate_to_plan_tab_Plan Tab,0.79,0.664
+search,_Plan Tab,search_Plan Tab,0.369,0.448
+search-cancel,_Plan Tab,search-cancel_Plan Tab,0.358,0.441
+apply filter,_Plan Tab,apply filter_Plan Tab,0.39,0.514
+reset filter,_Plan Tab,reset filter_Plan Tab,0.364,0.473
+click on 1st customer,_Plan Tab,click on 1st customer_Plan Tab,1.26,1.47
+click plan,_Plan Tab,click plan_Plan Tab,0.825,1.03
+edit appointments,_Plan Tab,edit appointments_Plan Tab,0.151,0.174
+save plan,_Plan Tab,save plan_Plan Tab,5.88,7.59
+navigate to unschedule,_Plan Tab,navigate to unschedule_Plan Tab,0.374,0.471
+search1,_Plan Tab,search1_Plan Tab,0.372,0.459
+search1-cancel,_Plan Tab,search1-cancel_Plan Tab,0.372,0.448
+filter-apply,_Plan Tab,filter-apply_Plan Tab,0.387,0.47
+filter-reset,_Plan Tab,filter-reset_Plan Tab,0.372,0.501
+open first customer,_Plan Tab,open first customer_Plan Tab,1.9,2.34
+select plan1,_Plan Tab,select plan1_Plan Tab,0.2,0.275
+add appointment1,_Plan Tab,add appointment1_Plan Tab,0.148,0.205
+save plan1,_Plan Tab,save plan1_Plan Tab,6.39,7.65
+navigate to all,_Plan Tab,navigate to all_Plan Tab,2.71,3.77
+select tag1,_Plan Tab,select tag1_Plan Tab,1.28,1.56
+unselect tag 1,_Plan Tab,unselect tag 1_Plan Tab,1.08,1.3
+select tag2,_Plan Tab,select tag2_Plan Tab,1.08,1.32
+search2,_Plan Tab,search2_Plan Tab,1.33,1.73
+search2-cancel,_Plan Tab,search2-cancel_Plan Tab,2.28,3.41
+select filter,_Plan Tab,select filter_Plan Tab,3.6,5.18
+reset,_Plan Tab,reset_Plan Tab,2.4,2.96
+open customer,_Plan Tab,open customer_Plan Tab,1.27,1.54
+click plan1,_Plan Tab,click plan1_Plan Tab,1.33,1.06
+add appointment2,_Plan Tab,add appointment2_Plan Tab,0.151,0.175
+save the plan,_Plan Tab,save the plan_Plan Tab,6.63,9.06
+navigate to more,_Plan Tab,navigate to more_Plan Tab,0.76,0.964
+selectidentity,_More Tab,selectidentity_More Tab,7.77,9.38
+navigate to more,_More Tab,navigate to more_More Tab,0.881,1.21
+metrics-cardiovascular,_More Tab,metrics-cardiovascular_More Tab,1.23,1.55
+navigate to insights,_More Tab,navigate to insights_More Tab,0.565,0.941
+star,_More Tab,star_More Tab,0.196,0.261
+unstar,_More Tab,unstar_More Tab,0.192,0.26
+navigate to HCP,_More Tab,navigate to HCP_More Tab,0.757,1.19
+HCP-search-cancel,_More Tab,HCP-search-cancel_More Tab,0.679,0.966
+HCP- mark fav,_More Tab,HCP- mark fav_More Tab,0.181,0.233
+HCP-filter,_More Tab,HCP-filter_More Tab,0.546,0.756
+HCP-filter reset,_More Tab,HCP-filter reset_More Tab,0.661,0.992
+HCP-mark unfav,_More Tab,HCP-mark unfav_More Tab,0.232,0.235
+HCP- open customer,_More Tab,HCP- open customer_More Tab,1.07,1.27
+HCP- navigate to metrics,_More Tab,HCP- navigate to metrics_More Tab,0.691,0.835
+HCP- navigate to metrics-cardiovascular,_More Tab,HCP- navigate to metrics-cardiovascular_More Tab,1.02,0.946
+HCP-navigate to activity,_More Tab,HCP-navigate to activity_More Tab,0.198,0.255
+HCP-navigate to insights,_More Tab,HCP-navigate to insights_More Tab,0.178,0.217
+HCP-navigate to availability,_More Tab,HCP-navigate to availability_More Tab,0.165,0.213
+HCP- navigate to affiliation,_More Tab,HCP- navigate to affiliation_More Tab,0.399,0.447
+HCP- navigate to association,_More Tab,HCP- navigate to association_More Tab,0.359,0.449
+HCP- navigate to payers,_More Tab,HCP- navigate to payers_More Tab,0.337,0.41
+navigate to market,_More Tab,navigate to market_More Tab,0.459,0.641
+market-mark fav,_More Tab,market-mark fav_More Tab,0.332,0.551
+market-mark unfav,_More Tab,market-mark unfav_More Tab,0.706,0.82
+navigate to personalize,_More Tab,navigate to personalize_More Tab,0.159,0.214
+navigate to saved,_More Tab,navigate to saved_More Tab,0.257,0.354
+saved-search,_More Tab,saved-search_More Tab,28.6,34.6
+saved-search-cancel,_More Tab,saved-search-cancel_More Tab,0.518,0.681
+saved-filter,_More Tab,saved-filter_More Tab,0.421,0.545
+saved-filter reset,_More Tab,saved-filter reset_More Tab,0.421,0.542
+saved-open call planning,_More Tab,saved-open call planning_More Tab,0.946,1.19
+saved- open additional insights,_More Tab,saved- open additional insights_More Tab,0.421,0.189
+logout,_More Tab,logout_More Tab,1.92,3.6
+select_identity,_Customer Insights,select_identity_Customer Insights,7.79,9.68
+open customer insights,_Customer Insights,open customer insights_Customer Insights,5.02,6.3
+select tab1,_Customer Insights,select tab1_Customer Insights,2.19,2.44
+unselect tab1,_Customer Insights,unselect tab1_Customer Insights,4.7,5.98
+select tab2,_Customer Insights,select tab2_Customer Insights,2.21,2.4
+unselect tab 2,_Customer Insights,unselect tab 2_Customer Insights,4.59,6.31
+open 1st customer,_Customer Insights,open 1st customer_Customer Insights,1.75,2.17
+open additional insights,_Customer Insights,open additional insights_Customer Insights,4.54,5.4
+metrics,_Customer Insights,metrics_Customer Insights,0.554,0.684
+metrics-cardiovascular,_Customer Insights,metrics-cardiovascular_Customer Insights,0.292,0.367
+navigate to activity,_Customer Insights,navigate to activity_Customer Insights,0.671,0.539
+navigate to insights,_Customer Insights,navigate to insights_Customer Insights,0.247,0.35
+imported_navigate to payers,_Customer Insights,imported_navigate to payers_Customer Insights,0.154,0.209
+navigate to availability,_Customer Insights,navigate to availability_Customer Insights,0.154,0.216
+add availabilty,_Customer Insights,add availabilty_Customer Insights,0.412,0.5
+star,_Customer Insights,star_Customer Insights,0.161,0.204
+unstar,_Customer Insights,unstar_Customer Insights,0.153,0.203
+navigate to affiliation,_Customer Insights,navigate to affiliation_Customer Insights,0.686,0.85
+click plan,_Customer Insights,click plan_Customer Insights,0.293,0.374
+add appointment,_Customer Insights,add appointment_Customer Insights,0.149,0.199
+save plan,_Customer Insights,save plan_Customer Insights,9.96,12.6
+navigate to more,_Customer Insights,navigate to more_Customer Insights,0.814,1.16
+select_identity,_Business Insights,select_identity_Business Insights,7.48,9.96
+business insights,_Business Insights,business insights_Business Insights,1.54,1.9
+save,_Business Insights,save_Business Insights,6.33,8.06
+unsave,_Business Insights,unsave_Business Insights,6.81,8.92
+additional insights,_Business Insights,additional insights_Business Insights,0.152,0.195
+related org unit,_Business Insights,related org unit_Business Insights,0.158,0.195
+related org unit_1,_Business Insights,related org unit_1_Business Insights,0.483,0.571
+metrics-change product,_Business Insights,metrics-change product_Business Insights,1.28,1.49
+navigate to insights,_Business Insights,navigate to insights_Business Insights,0.402,0.569
+navigate to payers,_Business Insights,navigate to payers_Business Insights,1.25,2.49
+star,_Business Insights,star_Business Insights,0.202,0.277
+unstar,_Business Insights,unstar_Business Insights,0.449,0.258
+open second insights,_Business Insights,open second insights_Business Insights,1.26,1.56
+scroll,_Business Insights,scroll_Business Insights,1.58,1.99
+apply filter,_Business Insights,apply filter_Business Insights,0.487,0.538
+reset filter,_Business Insights,reset filter_Business Insights,1.76,2.13
+search,_Business Insights,search_Business Insights,12.5,24.3
+search-cancel,_Business Insights,search-cancel_Business Insights,2.11,1.95
+navigate to more,_Business Insights,navigate to more_Business Insights,0.358,0.442
+logout,_Business Insights,logout_Business Insights,1.89,3.39

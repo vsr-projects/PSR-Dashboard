@@ -7,8 +7,12 @@ from bs4 import BeautifulSoup
 import sys
 from datetime import datetime, timedelta
 import xml.etree.cElementTree as ET
+import pandas as pd
+import csv
 
-tree = ET.ElementTree(file=r"sprint3_warmup_report.xml")
+from collections import defaultdict
+
+tree = ET.ElementTree(file="./sprint3_warmup_report.xml")
 root = tree.getroot()
 
 
@@ -18,6 +22,7 @@ app=Flask(__name__)
 duration=0
 top_error=[]
 top_avg=[]
+top_max=[]
 stats=[]
 
 class Dash():
@@ -82,7 +87,7 @@ class Dash():
             print("Authentication failed: " + str(traceback.format_exc()))
     
     def PSRCost(self,start,end,granuarilty):
-        client = self._session.client('ce') #cost explorer service
+        client = self._session.client('ce')
         response = client.get_cost_and_usage(
             TimePeriod={
                 'Start': start,
@@ -218,13 +223,22 @@ def getModule(project):
 
 @app.route('/projects/stats', methods=['Get'])
 def getStats():
+    getTransection(root)
+    df=pd.DataFrame.from_dict(Transection,orient='index')
+    print(df)
+    df.sort_values(by=['percentile1'])
+    max_transection=df[0:5:1]
+    max_transection = max_transection.to_dict('dict')
+    print(max_transection)
     getHostpot(root)
     print(top_error)
     print(duration)
     print(stats)
     Allstats=[]
-    Allstats.append({"Top_error":top_error})
-    
+    Allstats.append({"Top_Error":top_error})
+    Allstats.append({"Top_Avg":top_avg})
+    Allstats.append({"Top_Max":top_max})
+    Allstats.append({'Max_Transection':max_transection})
     Allstats.append({"Duration":duration})
     
     Allstats.append({"stats":stats})
@@ -239,14 +253,14 @@ def getHostpot(root):
                 for k in i:
                     #k.attrib
                     top_error.append(k.attrib)
-            elif i.tag=='topavg':
+            if i.tag=='topavg':
                 for k in i:
                     #k.attrib
                     top_avg.append(k.attrib)
-            elif i.tag=='topmax':
+            if i.tag=='topmax':
                 for k in i:
                     #k.attrib
-                    top_avg.append(k.attrib)
+                    top_max.append(k.attrib)
     if root.tag=='test':
         global duration
         duration=root.attrib['duration']
@@ -257,16 +271,103 @@ def getHostpot(root):
     else:
         for i in root:
             getHostpot(i)
-            
-
 
 #getHostpot(root)
-print(top_error)
-print(duration)
-print(stats)
+    #print(top_error,top_avg,top_max)
+    #print(duration)
+    #print(stats)
 
 
 
-app.run(debug=True)
+
+
+Transection={}
+def getTransection(root):
+    global count
+    if root.tag=='statistic-item':
+        #print(root)
+        for i in root:
+            if i.tag=='statistic-item' and ('parentName' in i.attrib) and i.attrib['parentName']=='Actions':
+                #print(i.attrib)
+                if i.attrib['name'] in Transection:
+                    p1=Transection[i.attrib['name']]['percentile1']
+                    p2=i.attrib['percentile1']
+                    if p2>p1:
+                        Transection[i.attrib['name']]=i.attrib
+                    #count+=1
+                else:
+                    Transection[i.attrib['name']]=i.attrib
+            getTransection(i)
+    else:
+        for i in root:
+            getTransection(i)
+
+
+
+
+
+
+
+def getDic(f):
+    with open(f, mode='r') as csv_file:
+        reader = csv.DictReader(csv_file)
+        data = {}
+        for row in reader:
+            userpath = row.pop('user_path')
+            #print(row.keys())
+            Transection=row.pop('ï»¿Transaction')
+            #print(Transection)
+            #Trans[Transection]=row
+            #print(Trans)
+            if userpath.lower() in data:
+                data[userpath.lower()][Transection.lower()]=row
+            else:
+                data[userpath.lower()]={}
+            #data1[userpath]=Trans
+
+    return data
+@app.route('/projects/compare/<string:f1>&<string:f2>', methods=['Get'])
+def compare(f1,f2):
+    path='C:/Users/vs38731/Documents/GitHub/PSR-Dashboard/api/'
+    file1 = path+f1+'.csv'
+    #file2='my_file.csv'
+    #Trans={}
+    
+    file2 = path+f2+'.csv'
+    #file2='my_file.csv'
+    #Trans={}
+    data1=getDic(file1)
+    #print("data1:-------------",data1)
+    data2=getDic(file2)
+    #print(data2)
+    data3=["file1","file2","average1","average2","p1","p2"]
+    for i in data1:
+        userpath=i
+        #print(i)
+        if i in data2:
+            #print(i)
+            for j in data1[i]:
+                #print("j",j)
+                tran1=data1[i][j]
+                #print(data2)
+                if j in data2[i]:
+                    tran2=data2[i][j]
+                else:
+                    #tran2="NAN"
+                    continue
+                    
+                
+                #print(tran2,tran1)
+                avg1=tran1["Average Response Time (sec)"]
+                avg2=tran2["Average Response Time (sec)"]
+                p1=tran1["90th Percentile Response Time (sec)"]
+                p2=tran2["90th Percentile Response Time (sec)"]
+                #print(avg1,avg2,p1,p2)
+                data3.append([userpath,j,avg1,avg2,p1,p2])
+    print(data3)
+    return jsonify(data3)
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5001)
 
 

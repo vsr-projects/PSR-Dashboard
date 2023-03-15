@@ -25,6 +25,7 @@ import RepNfr from '../../../ui-elements/cards/analytics/RepNfr'
 import RepDv from '../../../ui-elements/cards/analytics/RepDv'
 import RepDropdownf from './RepDropdownf'
 import tavg from './tavg'
+import Repcomp from './Repcomp'
 import ModalFormAndScroll from '../../../components/modal/ModalFormAndScroll'
 
 // ** Styles
@@ -50,7 +51,6 @@ const RepDashboard = () => {
           <RepDropdownf/>
           
         </Col>
-        
       </Row>
       <Row className='match-height'>
         
