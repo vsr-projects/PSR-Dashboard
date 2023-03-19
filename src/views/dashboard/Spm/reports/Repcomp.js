@@ -5,6 +5,7 @@ import { useState } from 'react'
 import RepDropdowntable1 from './RepDropdowntable1'
 import RepDropdowntable2 from './RepDropdowntable2'
 import RepDropdowntable3 from './RepDropdowntable3'
+import RepDropdowntablecomp from './RepDropdowntablecomp'
 // ** Reactstrap Imports
 
 import {
@@ -38,10 +39,11 @@ const Repcomp = props => {
         <Col className="revenue-report-wrapper" md="12" xs="12">
           <div className="d-sm-flex justify-content-between align-items-center mb-3">
             <CardTitle className="mb-50 mb-sm-0">
-              Select Release version from the dropdown to get Release specific
-              metrics
+              Select between two version from the dropdown to get Release specific
+              comparision metrics
             </CardTitle>
-          
+          </div>
+          <div> 
             <UncontrolledButtonDropdown>
               <DropdownToggle
                 className="budget-dropdown"
@@ -53,17 +55,66 @@ const Repcomp = props => {
                 Release Version
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem href="/" tag="a">
+                <DropdownItem href=" " tag="a">
                   R1
                 </DropdownItem>
-                <DropdownItem href="/" tag="a">
+                <DropdownItem href=" " tag="a">
                   R2
                 </DropdownItem>
-                <DropdownItem href="/" tag="a">
+                <DropdownItem href=" " tag="a">
                   R3
                 </DropdownItem>
-                <DropdownItem href="/" tag="a">
+                <DropdownItem href=" " tag="a">
                   R4
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R5
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R6
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R7
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R8
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledButtonDropdown>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vs &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <UncontrolledButtonDropdown>
+              <DropdownToggle
+                className="budget-dropdown"
+                outline
+                color="primary"
+                size="lg"
+                caret
+              >
+                Release Version
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem href=" " tag="a">
+                  R1
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R2
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R3
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R4
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R5
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R6
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R7
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R8
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledButtonDropdown>
@@ -73,15 +124,7 @@ const Repcomp = props => {
             <div style={{paddingTop: "20px", paddingLeft:"10px", display: "flex"}}>
               <CardTitle className="mb-50 pt-10 mb-sm-0" style={{textAlign : "center", color : 'primary'}}>
                 Average Stats
-              <RepDropdowntable1/>
-              </CardTitle>
-              <CardTitle className="mb-50 pt-10 mb-sm-0" style={{paddingLeft:"10px", textAlign : "center"}}>
-                Max Transactions
-                <RepDropdowntable2/>
-              </CardTitle>
-              <CardTitle className="mb-50 pt-10 mb-sm-0" style={{paddingLeft:"10px", textAlign : "center"}}>
-                Observations & Issues
-                <RepDropdowntable3/>
+              <RepDropdowntablecomp/>
               </CardTitle>
               
             </div>

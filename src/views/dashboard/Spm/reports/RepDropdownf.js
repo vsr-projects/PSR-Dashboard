@@ -53,16 +53,16 @@ const RepDropdownf = props => {
                 Release Version
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem href="/" tag="a">
+                <DropdownItem href="" tag="a">
                   R1
                 </DropdownItem>
-                <DropdownItem href="/" tag="a">
+                <DropdownItem href="" tag="a">
                   R2
                 </DropdownItem>
-                <DropdownItem href="/" tag="a">
+                <DropdownItem href="" tag="a">
                   R3
                 </DropdownItem>
-                <DropdownItem href="/" tag="a">
+                <DropdownItem href="" tag="a">
                   R4
                 </DropdownItem>
               </DropdownMenu>
@@ -72,16 +72,17 @@ const RepDropdownf = props => {
             <div style={{paddingTop: "20px", paddingLeft:"10px", display: "flex"}}>
               <CardTitle className="mb-50 pt-10 mb-sm-0" style={{textAlign : "center", color : 'primary'}}>
                 Average Stats
-              </CardTitle>
               <RepDropdowntable1/>
+              </CardTitle>
               <CardTitle className="mb-50 pt-10 mb-sm-0" style={{paddingLeft:"10px", textAlign : "center"}}>
                 Max Transactions
+                <RepDropdowntable2/>
               </CardTitle>
-              <RepDropdowntable2/>
-              <CardTitle className="mb-50 pt-10 mb-sm-0" style={{paddingLeft:"10px", textAlign : "center"}}>
+              {/* <CardTitle className="mb-50 pt-10 mb-sm-0" style={{paddingLeft:"10px", textAlign : "center"}}>
                 Observations & Issues
+                <RepDropdowntable3/>
               </CardTitle>
-              <RepDropdowntable3/>
+              <RepDropdowntable3/> */}
             </div>
             <div style={{paddingTop: "20px"}}>
               <Button color='success' outline onClick={() => setScrollInnerModal(!scrollInnerModal)}>
@@ -90,7 +91,7 @@ const RepDropdownf = props => {
               <Modal scrollable isOpen={scrollInnerModal} toggle={() => setScrollInnerModal(!scrollInnerModal)}>
                 <ModalHeader toggle={() => setScrollInnerModal(!scrollInnerModal)}>Modal Title</ModalHeader>
                 <ModalBody>
-                  <p>
+                  <p> 
                     Results for the Current Release
                   </p>
                   <iframe width="100%" height="1000px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3koXDpk_fkYFgGi4qhkyeZZcr9u_Z5G2vk0SDcai_Lfpit8XR3jRaSOQM5XLKXoN87s_TajfZKKXi/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>

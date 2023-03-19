@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { Table } from 'reactstrap'
 import axios from 'axios'
 
-const RepDropdowntable2 = () => {
+const RepDropdowntablecomp = () => {
     const [stats, setStats] = useState([])
   
     useEffect(() => {
@@ -36,6 +36,9 @@ const RepDropdowntable2 = () => {
                 <th scope='col' className='text-nowrap'>
                   Value
                 </th>
+                <th scope='col' className='text-nowrap'>
+                  Value2
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -45,6 +48,7 @@ const RepDropdowntable2 = () => {
                 <tr key={index}>
                   <td className='text-nowrap'>{index + 1}</td>
                   <td className='text-nowrap'>{stat.name}</td>
+                  <td className='text-nowrap'>{stat.value}</td>
                   <td className='text-nowrap'>{stat.value}</td>
                 </tr>
                 )
@@ -56,5 +60,5 @@ const RepDropdowntable2 = () => {
     )
   }
   
-  export default RepDropdowntable2
+  export default RepDropdowntablecomp
   

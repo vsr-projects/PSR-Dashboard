@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 import xml.etree.cElementTree as ET
 import pandas as pd
 import csv
-
+from flask_cors import CORS
 from collections import defaultdict
 
 tree = ET.ElementTree(file="./sprint3_warmup_report.xml")
@@ -17,7 +17,7 @@ root = tree.getroot()
 
 
 app=Flask(__name__)
-
+CORS(app)
 
 duration=0
 top_error=[]
@@ -326,14 +326,14 @@ def getDic(f):
             #data1[userpath]=Trans
 
     return data
-@app.route('/projects/compare/<string:f1>&<string:f2>', methods=['Get'])
+@app.route('/projects/compare/', methods=['Get'])
 def compare(f1,f2):
     path='C:/Users/vs38731/Documents/GitHub/PSR-Dashboard/api/'
-    file1 = path+f1+'.csv'
+    file1 = path+r9+'.csv'
     #file2='my_file.csv'
     #Trans={}
     
-    file2 = path+f2+'.csv'
+    file2 = path+r10+'.csv'
     #file2='my_file.csv'
     #Trans={}
     data1=getDic(file1)

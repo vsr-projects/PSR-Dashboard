@@ -7,10 +7,15 @@ const RepDropdowntable1 = () => {
     const [stats, setStats] = useState([])
   
     useEffect(() => {
-      axios.get('http://127.0.0.1:5000/projects/stats')
-        .then(response => {
-          setStats(response.data.stats)
+      fetch('http://127.0.0.1:5001/projects/stats',{
+    
+      })
+        .then((response) => (response.json()))
+        .then((data)=>{
+          console.log(data[5].stats)
+          setStats(data[5].stats)
         })
+   
         .catch(error => {
           console.log(error)
         })
@@ -34,13 +39,16 @@ const RepDropdowntable1 = () => {
               </tr>
             </thead>
             <tbody>
-              {stats.map((stat, index) => (
+              {stats.map((stat, index) => {
+                console.log(stat)
+                return(
                 <tr key={index}>
                   <td className='text-nowrap'>{index + 1}</td>
                   <td className='text-nowrap'>{stat.name}</td>
                   <td className='text-nowrap'>{stat.value}</td>
                 </tr>
-              ))}
+                )
+                })}
             </tbody>
           </Table>
         </div>

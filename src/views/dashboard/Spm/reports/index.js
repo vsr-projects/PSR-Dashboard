@@ -51,9 +51,13 @@ const RepDashboard = () => {
           <RepDropdownf/>
           
         </Col>
+        <Col lg='12' md='3' >
+          <Repcomp/>
+          
+        </Col>
       </Row>
       <Row className='match-height'>
-        
+         
         <Col lg='12' md='12'>
           <FPhc primary={colors.primary.main} warning={colors.warning.main} />
         </Col>
