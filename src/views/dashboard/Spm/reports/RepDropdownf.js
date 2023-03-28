@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom'
 // ** Third Party Components
 import RepDropdowntable1 from './RepDropdowntable1'
 import RepDropdowntable2 from './RepDropdowntable2'
-import RepDropdowntable3 from './RepDropdowntable3'
 
 // ** Reactstrap Imports
 import {
@@ -50,7 +49,7 @@ const RepDropdownf = props => {
                 size="lg"
                 caret
               >
-                Release Version
+                R6
               </DropdownToggle>
               <DropdownMenu>
                 <DropdownItem href="" tag="a">
@@ -64,6 +63,18 @@ const RepDropdownf = props => {
                 </DropdownItem>
                 <DropdownItem href="" tag="a">
                   R4
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R5
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R6
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R7
+                </DropdownItem>
+                <DropdownItem href=" " tag="a">
+                  R8
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledButtonDropdown>
@@ -82,7 +93,7 @@ const RepDropdownf = props => {
                 Observations & Issues
                 <RepDropdowntable3/>
               </CardTitle>
-              <RepDropdowntable3/> */}
+               */}
             </div>
             <div style={{paddingTop: "20px"}}>
               <Button color='success' outline onClick={() => setScrollInnerModal(!scrollInnerModal)}>

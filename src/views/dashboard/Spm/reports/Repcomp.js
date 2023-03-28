@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // ** Third Party Components
 import RepDropdowntable1 from './RepDropdowntable1'
@@ -21,17 +21,113 @@ import {
   Modal,
   ModalHeader, 
   ModalBody, 
-  ModalFooter} from 'reactstrap'
+  ModalFooter,
+  Container} from 'reactstrap'
+import DataTable from 'react-data-table-component'
+import { Box } from 'react-feather'
 
 const Repcomp = props => {
   // ** State
   const [scrollModal, setScrollModal] = useState(false)
   const [scrollInnerModal, setScrollInnerModal] = useState(false)
+  const [stats, setStats] = useState([])
+  const columns  = [
+    {
+        name: 'Name',
+        selector: (row) => row.Name,
+        sortable:true,
+        minWidth: '250px',
+        style: {
+          color: '#202124',
+          fontSize: '15px',
+          fontWeight: 600,
+        },
+        // style:{
+        //   padding:"1%",
+        //   color:"black",
+        //   fontWeight:"900",
+        //   fontSize:"0.8rem"
+        // }
+    },
+    {
+      name: 'Value1',
+      selector: (row) => row["Average for file1"],
+      sortable:true,
+      style: {
+        color: 'rgba(0,0,0,.54)',
+      },
+      // style:{
+      //   padding:"1%",
+      //   color:"black",
+      //   fontWeight:"900",
+      //   fontSize:"0.8rem"
+      // }
+    },
+    {
+      name: 'Value 2',
+      selector: (row) => row["Average for file2"],
+      sortable:true,
+      style: {
+        color: 'rgba(0,0,0,.54)',
+      },
+      // style:{
+      //   padding:"1%",
+      //   color:"black",
+      //   fontWeight:"900",
+      //   fontSize:"0.8rem"
+      // }
+    },
+    {
+      name: 'P value1',
+      selector: (row) => row["90 percentile for file1"],
+      sortable:true,
+      
+      style: {
+        color: 'rgba(0,0,0,.54)',
+      },
+      // style:{
+      //   padding:"1%",
+      //   color:"black",
+      //   fontWeight:"900",
+      //   fontSize:"0.8rem"
+      // }
+    },
+    {
+      name: 'P value2',
+      selector: (row) => row["90 percentile for file2"],
+      sortable:true,
+      style: {
+        color: 'rgba(0,0,0,.54)',
+      },
+      // style:{
+      //   padding:"1%",
+      //   color:"black",
+      //   fontWeight:"900",
+      //   fontSize:"0.8rem"
+      // }
+    },
+];
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:5001/projects/compare/r9&r10',{
+  
+    })
+      .then((response) => (response.json()))
+      .then((data)=>{
+      setStats(data)
+        
+      })
+ 
+      .catch(error => {
+        console.log(error)
+      })
+  }, [])
   const handleDownload = () => {
     window.location.href =
       'https://docs.google.com/spreadsheets/d/e/2PACX-1vT3koXDpk_fkYFgGi4qhkyeZZcr9u_Z5G2vk0SDcai_Lfpit8XR3jRaSOQM5XLKXoN87s_TajfZKKXi/pubhtml?gid=0&single=true&widget=true&headers=false'
   }
-  
+
+
 
   return (
     <Card className="card-revenue-budget">
@@ -119,20 +215,31 @@ const Repcomp = props => {
               </DropdownMenu>
             </UncontrolledButtonDropdown>
           </div>
-          <Col lg="4" md="12">
+          <Col >
             
-            <div style={{paddingTop: "20px", paddingLeft:"10px", display: "flex"}}>
-              <CardTitle className="mb-50 pt-10 mb-sm-0" style={{textAlign : "center", color : 'primary'}}>
-                Average Stats
-              <RepDropdowntablecomp/>
-              </CardTitle>
+            <div style={{paddingTop: "20px", paddingLeft:"-10px", display: "flex"}}>
+        
+            <Container  style={{
+              display:"flex",
+              
+              flexDirection:"row"
+            }}>
+              <Container width="50%" paddingLeft="-20px">
+          <DataTable pagination title="business insights"  columns={columns} data={stats["_business insights"]} />
+          </Container>
+          <Container  width="50%">
+          <DataTable title="Plan tab"  columns={columns} data={stats["_plan tab"]} pagination />
+          </Container>
+    </Container>
+              
               
             </div>
             <div style={{paddingTop: "20px"}}>
-            <div>
+            <div >
               <Button color='success' outline onClick={() => setScrollInnerModal(!scrollInnerModal)}>
                 Release Results
               </Button>
+    
               <Modal scrollable isOpen={scrollInnerModal} toggle={() => setScrollInnerModal(!scrollInnerModal)}>
                 <ModalHeader toggle={() => setScrollInnerModal(!scrollInnerModal)}>Modal Title</ModalHeader>
                 <ModalBody>
@@ -150,10 +257,10 @@ const Repcomp = props => {
                 </ModalFooter>
               </Modal>
             </div>
-              
+       
               
             </div>
-            
+ 
           </Col>
           <Col lg="4" md="12">
             <tavg></tavg>
@@ -161,6 +268,7 @@ const Repcomp = props => {
         </Col>
       </Row>
     </Card>
+    
   ) 
 }
 

@@ -17,8 +17,8 @@ root = tree.getroot()
 
 
 app=Flask(__name__)
-CORS(app)
 
+CORS(app)
 duration=0
 top_error=[]
 top_avg=[]
@@ -26,7 +26,7 @@ top_max=[]
 stats=[]
 
 class Dash():
-    def __init__(self, username, password,
+    def _init_(self, username, password,
                  idp_url='https://adfs.zsassociates.com:443/adfs/ls/idpinitiatedsignon.aspx?LoginToRP=urn:amazon:webservices',
                  sslverification=True):
         self._username = username
@@ -184,7 +184,7 @@ def sahil(username,Pas):
     global mainObj
     mainObj= Dash(username,Pas)
     session=mainObj.create_session('aws-a0000-glbl-00-r-rol-shrd-psr-pwr01', '654797948623')
-    #print("session ________________________________",Sess)
+    #print("session ____________",Sess)
     return str(session)
 
 @app.route('/createSession/costs', methods=['Get'])
@@ -326,23 +326,27 @@ def getDic(f):
             #data1[userpath]=Trans
 
     return data
-@app.route('/projects/compare/', methods=['Get'])
+@app.route('/projects/compare/<string:f1>&<string:f2>', methods=['Get'])
 def compare(f1,f2):
-    path='C:/Users/vs38731/Documents/GitHub/PSR-Dashboard/api/'
-    file1 = path+r9+'.csv'
+    path='./'
+    file1 = path+f1+'.csv'
     #file2='my_file.csv'
     #Trans={}
     
-    file2 = path+r10+'.csv'
+    file2 = path+f2+'.csv'
     #file2='my_file.csv'
     #Trans={}
     data1=getDic(file1)
     #print("data1:-------------",data1)
     data2=getDic(file2)
     #print(data2)
-    data3=["file1","file2","average1","average2","p1","p2"]
+    data3=["Transection","average fot file 1","average2 for file 2","p1","p2"]
+    userpath_dis={}
     for i in data1:
         userpath=i
+        print(i)
+        if userpath not in userpath_dis:
+            userpath_dis[userpath]=[]
         #print(i)
         if i in data2:
             #print(i)
@@ -362,12 +366,12 @@ def compare(f1,f2):
                 avg2=tran2["Average Response Time (sec)"]
                 p1=tran1["90th Percentile Response Time (sec)"]
                 p2=tran2["90th Percentile Response Time (sec)"]
-                #print(avg1,avg2,p1,p2)
-                data3.append([userpath,j,avg1,avg2,p1,p2])
-    print(data3)
-    return jsonify(data3)
+                trans={}
+                trans[j]={"Name":j,"Average for file1":avg1,"Average for file2":avg2,"90 percentile for file1":p1,"90 percentile for file2":p2}
+                userpath_dis[userpath].append(trans[j])
+                data3.append({j:trans[j]})
+    print(userpath_dis)
+    return jsonify(userpath_dis)
 
-if __name__ == '__main__':
-    app.run(debug=True, port=5001)
 
-
+app.run(debug=True, port=5001)
