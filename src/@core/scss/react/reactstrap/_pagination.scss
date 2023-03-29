@@ -41,3 +41,31 @@
     }
   }
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination__link {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 3px;
+}
+
+.pagination__link--disabled {
+  background-color: #eee;
+  border-color: #bbb;
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+.pagination__link--active {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}

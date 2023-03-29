@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 
 import { Table } from 'reactstrap'
-import axios from 'axios'
 
 const RepDropdowntablecomp = () => {
     const [stats, setStats] = useState([])
