@@ -6,7 +6,7 @@ import { Pagination, PaginationItem, PaginationLink } from 'reactstrap'
 const RepDropdowntable1 = () => {
   const [stats, setStats] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage] = useState(40)
+  const [itemsPerPage] = useState(10)
 
   useEffect(() => {
     fetch('http://127.0.0.1:5001/projects/stats', {})
