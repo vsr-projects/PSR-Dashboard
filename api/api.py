@@ -12,13 +12,9 @@ import csv
 from flask_cors import CORS
 from collections import defaultdict
 
-tree = ET.ElementTree(file="./sprint3_warmup_report.xml")
-root = tree.getroot()
-
-
 app=Flask(__name__)
 
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 duration=0
 top_error=[]
 top_avg=[]
@@ -179,6 +175,14 @@ cost=get_cost_and_usage_PSR(Start,End)
 print(cost,"is from start:",Start," Till :",End)'"""
 
 mainObj=None
+
+@app.route('/projects/releases', methods=['GET'])
+def getReleases():
+    import os
+    files = os.listdir("/path/to/xml/files")  # replace with your actual path
+    releases = [f[:-4] for f in files if f.endswith(".xml")]
+    return jsonify(releases)
+
 @app.route('/createSession/<string:username>/<string:Pas>', methods=['Get'])
 def sahil(username,Pas):
     global mainObj
@@ -207,7 +211,7 @@ def resourceCost():
 
 @app.route('/projects/lists', methods=['Get'])
 def getPojects():
-    path=r"C:\Users\sb31003\Desktop\Backend\dashboard-data"
+    path=r"C:\Users\vs38731\Documents\GitHub\PSR-Dashboard\api"
     entities = os.listdir(path)
     print("paths are --------------------",entities)
     return jsonify(entities)
@@ -215,14 +219,16 @@ def getPojects():
 
 @app.route('/projects/<string:project>', methods=['Get'])
 def getModule(project):
-    path=r"C:\Users\sb31003\Desktop\Backend\dashboard-data"
+    path=r"C:\Users\vs38731\Documents\GitHub\PSR-Dashboard\api"
     module=path+"/"+project
     entities = os.listdir(module)
     print("modules are------------",entities)
     return jsonify(entities)
 
-@app.route('/projects/stats', methods=['Get'])
-def getStats():
+@app.route('/projects/stats/<string:filename>', methods=['Get'])
+def getStats(filename):
+    tree = ET.ElementTree(file=f"./{filename}.xml")
+    root = tree.getroot()
     getTransection(root)
     df=pd.DataFrame.from_dict(Transection,orient='index')
     print(df)

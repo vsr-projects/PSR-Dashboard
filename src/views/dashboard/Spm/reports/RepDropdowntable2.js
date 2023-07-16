@@ -1,24 +1,22 @@
 import { useEffect, useState } from 'react'
 import { Table } from 'reactstrap'
-import axios from 'axios'
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap'
 
-const RepDropdowntable2 = () => {
+const RepDropdowntable2 = (props) => {
   const [stats, setStats] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage] = useState(10)
+  const [itemsPerPage] = useState(50)
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5001/projects/stats', {})
+    fetch(`http://127.0.0.1:5001/projects/stats/${props.data}`, {})
       .then((response) => response.json())
       .then((data) => {
-        console.log(data[5].stats)
         setStats(data[5].stats)
       })
       .catch((error) => {
         console.log(error)
       })
-  }, [])
+  }, [props.data])
 
   const indexOfLastItem = currentPage * itemsPerPage
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
@@ -62,7 +60,6 @@ const RepDropdowntable2 = () => {
           </thead>
           <tbody>
             {currentItems.map((stat, index) => {
-              console.log(stat)
               return (
                 <tr key={index}>
                   <td className='text-nowrap'>{index + 1}</td>

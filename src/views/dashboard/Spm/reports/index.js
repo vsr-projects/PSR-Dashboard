@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 // ** React Imports
 import { Fragment, useContext } from 'react'
 
@@ -38,6 +40,8 @@ import BreadCrumbs from '@components/breadcrumbs'
 const RepDashboard = () => {
   // ** Context
   const { colors } = useContext(ThemeColors)
+
+  const [releaseData, setReleaseData] = useState(null)
   // useEffect(() => {
   //   Prism.highlightAll()
   // }, [])
@@ -48,11 +52,11 @@ const RepDashboard = () => {
     <div id='dashboard-ecommerce'>
       <Row className='match-height'>
         <Col lg='12' md='3' >
-          <RepDropdownf/>
+          <RepDropdownf setReleaseData={setReleaseData} />
           
         </Col>
         <Col lg='12' md='3' >
-          <Repcomp/>
+          <Repcomp data={releaseData} />
           
         </Col>
       </Row>
