@@ -15,16 +15,19 @@ import {
 
 const checkIfDataExists = async (release) => {
   try {
-    const response = await fetch(`/path/to/xml/files/${release}.xml`)
+    const response = await fetch(`http://localhost:5001/files/${release}.xml`)
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
+    const data = await response.json()
+    const fileContent = data.content
     return true
   } catch (error) {
     console.error('Error fetching XML file:', error)
     return false
   }
 }
+
 
 const RepDropdownf = ({ setReleaseData }) => {
   const [selectedRelease, setSelectedRelease] = useState("R9")

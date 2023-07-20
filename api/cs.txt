@@ -1,3 +1,4 @@
+PYTHON API :-
 from flask import Flask, jsonify, request
 import boto3
 import requests
@@ -216,18 +217,6 @@ def getPojects():
     print("paths are --------------------",entities)
     return jsonify(entities)
 
-@app.route('/files/<filename>')
-def send_file(filename):
-    # Ensure the file exists.
-    if not os.path.exists(filename):
-        return "File not found", 404
-
-    # Read the file content.
-    with open(filename, 'r') as file:
-        file_content = file.read()
-
-    # Return the file content.
-    return jsonify(content=file_content)
 
 @app.route('/projects/<string:project>', methods=['Get'])
 def getModule(project):
@@ -393,3 +382,316 @@ def compare(f1,f2):
 
 
 app.run(debug=True, port=5001)
+
+
+The React code files :-
+
+index.js :-
+import { useState } from 'react'
+
+// ** React Imports
+import { Fragment, useContext } from 'react'
+
+// ** Reactstrap Imports
+import { Row, Col, UncontrolledButtonDropdown, CardText } from 'reactstrap'
+
+// ** Context
+import { ThemeColors } from '@src/utility/context/ThemeColors'
+
+// ** Demo Components
+import Earnings from '@src/views/ui-elements/cards/analytics/Earnings'
+import CardMedal from '@src/views/ui-elements/cards/advance/CardMedal'
+import CardMeetup from '@src/views/ui-elements/cards/advance/CardMeetup'
+import StatsCard from '@src/views/ui-elements/cards/statistics/StatsCard'
+import GoalOverview from '@src/views/ui-elements/cards/analytics/GoalOverview'
+import RevenueReport from '@src/views/ui-elements/cards/analytics/RevenueReport'
+import OrdersBarChart from '@src/views/ui-elements/cards/statistics/OrdersBarChart'
+import CardTransactions from '@src/views/ui-elements/cards/advance/CardTransactions'
+import ProfitLineChart from '@src/views/ui-elements/cards/statistics/ProfitLineChart'
+import CardBrowserStates from '@src/views/ui-elements/cards/advance/CardBrowserState'
+import RepRds from '@src/views/ui-elements/cards/analytics/RepRds'
+import FPhc from '@src/views/ui-elements/cards/analytics/FPhc'
+import RepUsers from '../../../ui-elements/cards/analytics/RepUsers'
+import RepNfr from '../../../ui-elements/cards/analytics/RepNfr'
+import RepDv from '../../../ui-elements/cards/analytics/RepDv'
+import RepDropdownf from './RepDropdownf'
+import tavg from './tavg'
+import Repcomp from './Repcomp'
+import ModalFormAndScroll from '../../../components/modal/ModalFormAndScroll'
+
+// ** Styles
+import '@styles/react/libs/charts/apex-charts.scss'
+import '@styles/base/pages/dashboard-ecommerce.scss'
+import Card from '@components/card-snippet'
+import BreadCrumbs from '@components/breadcrumbs'
+
+
+const RepDashboard = () => {
+  // ** Context
+  const { colors } = useContext(ThemeColors)
+
+  const [releaseData, setReleaseData] = useState(null)
+  // useEffect(() => {
+  //   Prism.highlightAll()
+  // }, [])
+
+  // ** vars
+
+  return (
+    <div id='dashboard-ecommerce'>
+      <Row className='match-height'>
+        <Col lg='12' md='3' >
+          <RepDropdownf setReleaseData={setReleaseData} />
+          
+        </Col>
+        <Col lg='12' md='3' >
+          <Repcomp data={releaseData} />
+          
+        </Col>
+      </Row>
+      <Row className='match-height'>
+         
+        <Col lg='12' md='12'>
+          <FPhc primary={colors.primary.main} warning={colors.warning.main} />
+        </Col>
+      </Row>
+      <Row className='match-height'>
+        <Col lg='6' md='10'>
+          <RepRds primary={colors.primary.main} warning={colors.warning.main} />
+        </Col>
+        <Col lg='6' md='10'>
+          <RepUsers primary={colors.primary.main} warning={colors.warning.main} />
+        </Col>
+      </Row>
+      <Row className='match-height'>
+        <Col lg='6' md='10'>
+          <RepNfr primary={colors.primary.main} warning={colors.warning.main} />
+        </Col>
+        <Col lg='6' md='10'>
+          <RepDv primary={colors.primary.main} warning={colors.warning.main} />
+        </Col>
+      </Row>
+    </div>
+  )
+}
+
+
+export default RepDashboard
+
+RepDropdownf.js :-
+import React, { useState, useEffect } from "react"
+import ReactDOM from "react-dom"
+import RepDropdowntable1 from "./RepDropdowntable1"
+import RepDropdowntable2 from "./RepDropdowntable2"
+import {
+  Row,
+  Col,
+  Card,
+  CardTitle,
+  DropdownMenu,
+  DropdownItem,
+  DropdownToggle,
+  UncontrolledButtonDropdown
+} from "reactstrap"
+
+const checkIfDataExists = async (release) => {
+  try {
+    const response = await fetch(`C:/Users/vs38731/Documents/GitHub/PSR-Dashboard/api/${release}.xml`)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    return true
+  } catch (error) {
+    console.error('Error fetching XML file:', error)
+    return false
+  }
+}
+
+const RepDropdownf = ({ setReleaseData }) => {
+  const [selectedRelease, setSelectedRelease] = useState("R9")
+  const [dataExists, setDataExists] = useState(true)  // New state
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const doesDataExist = await checkIfDataExists(selectedRelease)
+      setDataExists(doesDataExist)
+    }
+  
+    fetchData()
+  }, [selectedRelease])
+  
+  const handleReleaseSelect = (release) => {
+    setSelectedRelease(release)
+    setReleaseData(release)  // This will update the state in the parent component
+  }
+
+  return (
+    <Card className="card-revenue-budget">
+      <Row className="mx-0">
+        <Col className="revenue-report-wrapper" md="12" xs="12">
+          <div className="d-sm-flex justify-content-between align-items-center mb-3">
+            <CardTitle className="mb-50 mb-sm-0">
+              Select Release version from the dropdown to get Release specific
+              metrics
+            </CardTitle>
+
+            <UncontrolledButtonDropdown>
+              <DropdownToggle
+                className="budget-dropdown"
+                outline
+                color="primary"
+                size="lg"
+                caret
+              >
+                {selectedRelease}
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem onClick={() => handleReleaseSelect("R1")}>
+                  R1
+                </DropdownItem>
+                <DropdownItem onClick={() => handleReleaseSelect("R2")}>
+                  R2
+                </DropdownItem>
+                <DropdownItem onClick={() => handleReleaseSelect("R3")}>
+                  R3
+                </DropdownItem>
+                <DropdownItem onClick={() => handleReleaseSelect("R4")}>
+                  R4
+                </DropdownItem>
+                <DropdownItem onClick={() => handleReleaseSelect("R5")}>
+                  R5
+                </DropdownItem>
+                <DropdownItem onClick={() => handleReleaseSelect("R6")}>
+                  R6
+                </DropdownItem>
+                <DropdownItem onClick={() => handleReleaseSelect("R7")}>
+                  R7
+                </DropdownItem>
+                <DropdownItem onClick={() => handleReleaseSelect("R8")}>
+                  R8
+                </DropdownItem>
+                <DropdownItem onClick={() => handleReleaseSelect("R9")}>
+                  R9
+                </DropdownItem>
+                <DropdownItem onClick={() => handleReleaseSelect("R10")}>
+                  R10
+                </DropdownItem>
+                <DropdownItem onClick={() => handleReleaseSelect("R11")}>
+                  R11
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledButtonDropdown>
+          </div>
+
+          <Row className="mx-0" style={{ overflowX: "auto" }}>
+            <Col
+              lg="6"
+              md="12"
+              sm="12"
+              xs="12"
+              className="pr-lg-1 mb-2 mb-lg-0"
+            >
+              {dataExists ? (
+                <RepDropdowntable1 data={selectedRelease} />
+              ) : (
+                <div>Data for {selectedRelease} is not available.</div>
+              )}
+            </Col>
+
+            <Col lg="6" md="12" sm="12" xs="12" className="pl-lg-1">
+              {dataExists ? (
+                <RepDropdowntable2 data={selectedRelease} />
+              ) : (
+                <div>Data for {selectedRelease} is not available.</div>
+              )}
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </Card>
+  )
+}
+
+export default RepDropdownf
+
+
+RepDropdowntable1 :-
+import { useEffect, useState } from 'react'
+import {Pagination, PaginationItem, PaginationLink, Table } from 'reactstrap'
+
+const RepDropdowntable1 = (props) => {
+  const [stats, setStats] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [itemsPerPage] = useState(50)
+
+  useEffect(() => {
+    fetch(`http://127.0.0.1:5001/projects/stats/${props.data}`, {})
+      .then((response) => response.json())
+      .then((data) => {
+        setStats(data[5].stats)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }, [props.data])
+
+  const indexOfLastItem = currentPage * itemsPerPage
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage
+  const currentItems = stats.slice(indexOfFirstItem, indexOfLastItem)
+
+  const pageNumbers = []
+  for (let i = 1; i <= Math.ceil(stats.length / itemsPerPage); i++) {
+    pageNumbers.push(i)
+  }
+
+  const handleClick = (event) => {
+    setCurrentPage(Number(event.target.id))
+  }
+
+  const renderPageNumbers = pageNumbers.map((number) => {
+    return (
+      <PaginationItem key={number} active={currentPage === number}>
+        <PaginationLink id={number} onClick={handleClick}>
+          {number}
+        </PaginationLink>
+      </PaginationItem>
+    )
+  })
+
+  return (
+    <div>
+      <div>
+        <Table responsive>
+          <thead>
+            <tr>
+              <th scope='col' className='text-nowrap'>
+                S.no
+              </th>
+              <th scope='col' className='text-nowrap'>
+                Name
+              </th>
+              <th scope='col' className='text-nowrap'>
+                Value
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentItems.map((stat, index) => {
+              return (
+                <tr key={index}>
+                  <td className='text-nowrap'>{index + 1}</td>
+                  <td className='text-nowrap'>{stat.name}</td>
+                  <td className='text-nowrap'>{stat.value}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </Table>
+
+        <Pagination className='d-flex mt-3'>{renderPageNumbers}</Pagination>
+      </div>
+    </div>
+  )
+}
+
+export default RepDropdowntable1

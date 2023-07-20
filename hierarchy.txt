@@ -1,0 +1,8 @@
+demo.jsx: div, h1, h2, Chart, button, h2, StockChart, h2, MapChart, h2, Container, App
+Chart.jsx: HighchartsReact
+Container.jsx: div, HighchartsReact
+Map.jsx: HighchartsReact
+Stock.jsx: HighchartsReact
+ParentComponent.jsx: HighchartsReact
+swiper-slide.jsx: Dynamic, SwiperSlideContext, div
+swiper.jsx: div, SwiperContext, div, Show, div, div, Show, div, Show, div

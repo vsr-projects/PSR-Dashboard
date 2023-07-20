@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Table } from 'reactstrap'
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap'
+import {Pagination, PaginationItem, PaginationLink, Table } from 'reactstrap'
 
 const RepDropdowntable1 = (props) => {
   const [stats, setStats] = useState([])
